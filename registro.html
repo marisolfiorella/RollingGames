@@ -46,14 +46,14 @@
         </nav>
     </header>
 
-    <main>
-       <section class="container row">
+    <main class="container">
+       <section class="row">
 <div class="col-sm-12 col-md-10 col-lg-9">
-    <div class="card border-light my-5 rounded">
+    <div class="card border-2 shadow my-5 rounded">
         <div class="card-header bg-secondary text-light">
         <h4>Completá los Datos para Registrarte</h4>
     </div>
-    <div class="card-body shadow">
+    <div class="card-body">
         <form onsubmit="validarGeneral(event)" id="formSuscripcion">
             <div class="mb-3">
                 <label class="form-label">Usuario</label>
@@ -69,7 +69,7 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Repetir Contraseña</label>
-<input type="password" class="form-control" id="password" onblur="rpassword(this)" required />
+<input type="password" class="form-control" id="rpassword" onblur="rpassword(this)" required />
 <div class="valid-feedback"></div>
 <div class="invalid-feedback">contraseña inválida</div>
             </div>
@@ -121,13 +121,11 @@
                 <div class="invalid-feedback">
                   Debe aceptar los términos y condiciones
                 </div>
-                <div class="mb-3">
-                  <button type="submit" class="mt-3 container-fluid btn btn-secondary">
-                    Registrarse
-                  </button>
-                </div>
-              </div>
             </div>
+                  </div>
+            <button type="submit" class="mt-3 container-fluid btn btn-secondary">
+                Registrarse
+              </button>
           </form>
     </div>
 </div>
@@ -144,10 +142,8 @@
         <section class="container text-center mt-5">
 
             <article class="row">
-                <div class="col-sm-12 col-md-4">
-                    <img src="img/icono.png" alt="icono del blog" class="w-40 mt-2" id="iconofooter">
-                </div>
-                <div class="col-sm-12 col-md-4 mb-2">
+               
+                <div class="col-sm-12 col-md-6 mb-2">
                     <h3 class="mb-2 mt-2 display-4">Encontranos en:</h3>
                     <a href="http://facebook.com/" target="_blank" class="text-light mr-2 small"><i class="fab fa-facebook-square fa-2x mt-2">&nbsp;  RollingGames</i
                         ></a>
@@ -158,7 +154,7 @@
                         ></a>
 
                 </div>
-                <div class="col-sm-12 col-md-4 ">
+                <div class="col-sm-12 col-md-6 ">
                     <h3 class="text-light mb-3 mt-2 display-4">Unite: </h3>
                     <img src="img/badge-apple-store.svg" alt="logo apple store" class="mb-2 w-50" />
                     <img src="img/google-play-badge-bb.svg" alt="logo play store" class="w-50" />
