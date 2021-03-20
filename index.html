@@ -15,7 +15,7 @@
     <title>RollingGames</title>
 </head>
 
-<body>
+<body class="coloroscuro">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark  " id="navigation-bar">
             <section class="container">
@@ -30,7 +30,7 @@
                                 <a class="nav-link active" href="index.html">Inicio</a>
                             </li>
                             <li class="nav-item mx-2">
-                                <button type="button" class="btn btn-secondary text-light" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                                <button type="button" class="btn btn-dark text-light" data-bs-toggle="modal" data-bs-target="#modalLogin">
                                     Login
                                   </button>
                             </li>
@@ -50,226 +50,345 @@
             </section>
         </nav>
     </header>
+    <main>
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-2 bg-dark">
+                    <h4 class="text-light text-center mt-2">Explorar por generos</h3>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <h5><a class="nav-link active" aria-current="page" href="">Acción</a></h5>
+                            </li>
+                            <li class="nav-item">
+                                <h5><a class="nav-link active" aria-current="page" href="">Aventura</a></h5>
+                            </li>
+                            <li class="nav-item">
+                                <h5><a class="nav-link active" aria-current="page" href="">Indie</a></h5>
+                            </li>
+                            <li class="nav-item">
+                                <h5><a class="nav-link active" aria-current="page" href="">Multijugador</a></h5>
+                            </li>
+                            <li class="nav-item">
+                                <h5><a class="nav-link active" aria-current="page" href="">Mundo abierto</a></h5>
+                            </li>
+                            <li class="nav-item">
+                                <h5><a class="nav-link active" aria-current="page" href="">Plataformas</a></h5>
+                            </li>
+                            <li class="nav-item">
+                                <h5><a class="nav-link active" aria-current="page" href="">Shooter</a></h5>
+                            </li>
+                            <li class="nav-item">
+                                <h5> <a class="nav-link active" aria-current="page" href="">Terror</a></h5>
+                            </li>
 
-    <main class="bg-secondary ">
-        <!-- Seccion destacados -->
-        <div class="card" style="max-width: 1700px;">
-            <div class="row g-0 bg-dark text-light">
-                <div class="col-md-8">
-                    <img src="img/Super-Mario-Bros.jpg" class="w-100" alt="Imagen del Juego Mario Bros">
                 </div>
-                <div class="col-md-4 text-center rounded mx-auto d-block d-flex align-items-center">
-                    <div class="card-body">
-                        <a href="#" class="text-light">
-                            <h4 class="card-title display-3"> Mario Bros</h4>
-                        </a>
-                        <p class="card-text lead">El juego consiste en que manejas a dos hermanos llamados, Mario y Luigi que son enviados a enfrentar a Bowser y rescatar a la Princesa Peach. Pero para llegar a donde se encuentra Bowser. Mario y Luigi tienen que avanzar por varios
-                            mundos donde se encuentran niveles.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+
+                <div class="col-10">
+                    <section>
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="img/BioShock 1.jpg" class="d-block w-100" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/BioShock 2.jpg" class="d-block w-100" alt="">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="img/BioShock 3.jpg" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </section>
+                </div>
+                <section class="my-4">
+                    <h4 class="text-light lead">Juegos en oferta</h4>
+                    <div class="d-flex">
+                        <div class="mr-2"><img src="img/juegos/Dark Souls.jpg" alt="">
+                            <h4 class="text-light mt-2">Dark Souls</h4>
+                            <div class="d-flex text center">
+                                <button class="btn-success mr-2" disabled>50%</button>
+                                <h5 class="text-light mx-1"><s>ARS$400</s></h5>
+                                <h5 class="text-success mx-1">ARS$200</h5>
+                            </div>
+                        </div>
+                        <div class="mx-2"><img src="img/juegos/Darkest Dungeon.jpg" alt="">
+                            <h4 class="text-light">Darkest Dungeon</h4>
+                            <div class="d-flex text center">
+                                <button class="btn-success mr-2" disabled>75%</button>
+                                <h5 class="text-light mx-1"><s>ARS$280</s></h5>
+                                <h5 class="text-success mx-1">ARS$70 </h5>
+                            </div>
+                        </div>
+                        <div class="mx-2"><img src="img/juegos/Streets of Rage 4.jpg" alt="">
+                            <h4 class="text-light">Streets of Rage 4</h4>
+                            <div class="d-flex text center">
+                                <button class="btn-success mr-2" disabled>90%</button>
+                                <h5 class="text-light mx-1"><s>ARS$200</s></h5>
+                                <h5 class="text-success mx-1">ARS$20</h5>
+                            </div>
+                        </div>
+                        <div class="mx-2"><img src="img/juegos/No Man's Sky.jpg" alt="">
+                            <h4 class="text-light">No Man's Sky</h4>
+                            <div class="d-flex text center">
+                                <button class="btn-success mr-2" disabled>75%</button>
+                                <h5 class="text-light mx-1"><s>ARS$360</s></h5>
+                                <h5 class="text-success mx-1">ARS$90</h5>
+                            </div>
+                        </div>
+                        <div class="mx-2"><img src="img/juegos/Mortal Kombat X.jpg" alt="">
+                            <h4 class="text-light">Mortal Kombat X</h4>
+                            <div class="d-flex text center">
+                                <button class="btn-success mr-2" disabled>63%</button>
+                                <h5 class="text-light mx-1"><s>ARS$849</s></h5>
+                                <h5 class="text-success mx-1">ARS$315</h5>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
+                <section>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active bg-dark text-light" id="Nd" data-bs-toggle="tab" data-bs-target="#lista1nd" type="button" role="tab" aria-controls="lista1nd" aria-selected="true">Novedades destacadas</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link bg-dark text-light" id="LMV" data-bs-toggle="tab" data-bs-target="#lista2lmv" type="button" role="tab" aria-controls="lista2lmv" aria-selected="false">Los más vendidos</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link bg-dark text-light" id="prom" data-bs-toggle="tab" data-bs-target="#lista3promo" type="button" role="tab" aria-controls="lista3promo" aria-selected="false">Mas jugado</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class=" tab-pane fade show active" id="lista1nd" role="tabpanel" aria-labelledby="Nd">
+                            <ul class=" list-group">
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/Lista/BioShockCollection.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6><a href="">Bioshock the Collection</a></h6><i class="colorclaro colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio"> ARS$568</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/Lista/GTA.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">Grand thef auto</a></h6> <i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio"> ARS$624</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/Lista/Metro.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">Metro 2033 Redux</a></h6> <i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio">ARS$124</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/Lista/re2.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">Resident Evil 2 Remake</a></h6><i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio">ARS$148</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/Lista/SEKIRO.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">SEKIRO:Shadows dies Twice</a></h6> <i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio">ARS$1380</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="lista2lmv" role="tabpanel" aria-labelledby="LMV">
+                            <ul class="list-group">
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/lista2/outlast.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">Outlast</a></h6> <i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio">ARS$59</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/lista2/fallout.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a class="text-light lead" href="">Fallout 4</a></h6><i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio">ARS$437</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/lista2/inside.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">Inside</a></h6> <i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio">ARS$160</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/lista2/naruto.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">Naruto Shipudden ultimate Ninja Storm 3</a></h6> <i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio">ARS$219</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/lista2/ni no kuni.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">Ni no kuni 2: Revenant kingdom</a></h6> <i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio"> ARS$670</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="lista3promo" role="tabpanel" aria-labelledby="prom">
+                            <ul class="list-group">
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/lista3/assasins creed.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">Assasins Creed 3 Remastered</a></h6> <i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio">ARS$486</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/lista3/blasphemous.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">Blasphemous</a></h6> <i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio">ARS$290</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/lista3/cyberpunk 2077.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6> <a href="">Cyberpunk 2077</a></h6> <i class="colorclaro fab fa-windows fa-2x"></i>
+                                        <div class="mt-3"><a href="">Terror</a>
+                                            <a href="">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio">ARS$2599</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center"><img src="img/Listas/lista3/paladins.jpg" alt="" class="w-25">
+                                    <div class="mx-3">
+                                        <h6>
+                                            <a "href=" ">Paladins</a></h6> <i class="colorclaro fab fa-windows fa-2x "></i>
+                                        <div class="mt-3 "><a href=" ">Terror</a>
+                                            <a href=" ">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio ">Free to Play</div>
+                                </li>
+                                <li class="bg-dark list-group-item d-flex align-items-center "><img src="img/Listas/lista3/shovel knight.jpg " alt=" " class="w-25 ">
+                                    <div class="mx-3 ">
+                                        <h6> <a href=" ">Shovel Knight</a></h6> <i class="colorclaro fab fa-windows fa-2x "></i>
+                                        <div class="mt-3 "><a href=" ">Terror</a>
+                                            <a href=" ">Supervivencia</a></div>
+                                    </div>
+                                    <div class="precio ">ARS$120</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <form>
+                        <div class="mn-4 ">
+                            <label class="form-label ">Imagen</label>
+                            <input class="form-control " type="files " name=" " id=" ">
+                            <label class="form-label ">Nombre</label>
+                            <input class="form-control " type="text " name=" " id=" ">
+                            <label class="form-label ">Categoria</label>
+                            <input class="form-control " type="text " name=" " id=" ">
+                            <label class="form-label ">Precio</label>
+                            <input class="form-control " type="text " name=" " id=" ">
+                        </div>
+                    </form>
+                </section>
+
+
             </div>
         </div>
-        <section class="container">
-            <div class="row mt-5">
-                <div class="col-md-8">
-                    <h1 class="mt-3  text-light display-3">Bienvenidos a RollingGames
-                    </h1>
-                </div>
-                <!-- Input de busqueda -->
-                <div class="col-md-4 mt-5">
-                    <button class="btn btn-dark float-end px-2" type="submit"><i class="fas fa-search"></i></button>
-                    <input class="form-control float-end" list="datalistOptions" id="exampleDataList" placeholder="Escribe para buscar...">
-                    <datalist id="datalistOptions">
-                    <option value="Novedades">
-                    <option value="Accion">
-                    <option value="Deportivo">
-                    <option value="Estrategia">
-                    <option value="Arcade">
-                    <option value="Simulacion"> 
-                </datalist>
-
-                </div>
-            </div>
-            <!-- SLIDER DE NOVEDADES -->
-            <article>
-                <div class="juegos-recomendadas">
-                    <div class="contenedor-titulo-controles">
-                        <h3 class="mt-5">Novedades</h3>
-                        <div class="indicadores"></div>
-                    </div>
-
-                    <div class="contenedor-principal">
-                        <button role="button" id="flecha-izquierda" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
-
-                        <div class="contenedor-carousel">
-                            <div class="carousel">
-                                <div class="juego mx-">
-                                    <a href="#"><img src="img/Super-Mario-Bros.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/among.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/ex-desarrollor-de-rockstar-explica-por-que-hicieron-gta-v-remaster-en-lugar-de-gta-6.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/mortal_kombat_x-3847525.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/hipertextual-marvels-spider-man-2-llegaria-playstation-5-antes-que-pensabas-2019565206.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/UM5KX5KV2VEQ7JMVEFP4TTUF6U.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/gardenstory.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/Super-Mario-Bros.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/Super-Mario-Bros.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/Super-Mario-Bros.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/Super-Mario-Bros.jpg" alt=""></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <button role="button" id="flecha-derecha" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
-                    </div>
-                </div>
-            </article>
-            <!-- SLIDER DE ACCION -->
-            <article class="mt-3">
-                <div class="juegos-recomendadas">
-                    <div class="contenedor-titulo-controles">
-                        <h3 class="mt-5">Accion</h3>
-                        <div class="indicadores"></div>
-                    </div>
-
-                    <div class="contenedor-principal">
-                        <button role="button" id="flecha-izquierda2" class="flecha-izquierda"><i class="fas fa-angle-left"></i></button>
-
-                        <div class="contenedor-carousel">
-                            <div class="carousel">
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/Super-Mario-Bros.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/among.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/ex-desarrollor-de-rockstar-explica-por-que-hicieron-gta-v-remaster-en-lugar-de-gta-6.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/mortal_kombat_x-3847525.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/hipertextual-marvels-spider-man-2-llegaria-playstation-5-antes-que-pensabas-2019565206.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/UM5KX5KV2VEQ7JMVEFP4TTUF6U.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/gardenstory.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/Super-Mario-Bros.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/Super-Mario-Bros.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/Super-Mario-Bros.jpg" alt=""></a>
-                                </div>
-                                <div class="juego mx-4">
-                                    <a href="#"><img src="img/Super-Mario-Bros.jpg" alt=""></a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <button role="button" id="flecha-derecha2" class="flecha-derecha"><i class="fas fa-angle-right"></i></button>
-                    </div>
-                </div>
-            </article>
-        </section>
     </main>
 
     <!-- Modal -->
-    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
+    <div class="modal fade " id="modalLogin " tabindex="-1 " aria-labelledby="modalLoginLabel " aria-hidden="true ">
+        <div class="modal-dialog ">
+            <div class="modal-content ">
                 <!-- Modal Header -->
-                <div class="modal-header bg-dark text-light">
-                    <h5 class="modal-title " id="modalLoginLabel">Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal-header bg-dark text-light ">
+                    <h5 class="modal-title " id="modalLoginLabel ">Login</h5>
+                    <button type="button " class="btn-close " data-bs-dismiss="modal " aria-label="Close "></button>
                 </div>
                 <!-- Modal Body -->
                 <section class="row ">
                     <!-- Usuario y contraseña -->
                     <div class="col-sm-12 col-md-7 d-flex justify-content-between align-items-center ">
                         <div class="field-set container ">
-                            <i class="fas fa-user"></i>
-                            <span><input class="form-input mt-5 " id="txt-input" type="text" placeholder="Usuario" required></span>
+                            <i class="fas fa-user "></i>
+                            <span><input class="form-input mt-5 " id="txt-input " type="text " placeholder="Usuario " required></span>
                             <br>
                             <!--   Password -->
-                            <span class="input-item "><i class="fa fa-key"></i></span>
+                            <span class="input-item "><i class="fa fa-key "></i></span>
                             <!--   Password Input-->
-                            <input class="form-input mt-2" type="password" placeholder="Contraseña" id="pwd" name="Contraseña" required>
+                            <input class="form-input mt-2 " type="password " placeholder="Contraseña " id="pwd " name="Contraseña " required>
 
                         </div>
                     </div>
                     <!-- Imagen Usuario -->
                     <div class="col-sm-12 col-md-3 d-flex justify-content-between align-items-center ">
-                        <img src="/img/avatar3.jpg" alt="Imagen de usuario" class="w-100 ml-4 d-none d-sm-block mt-5">
+                        <img src="/img/avatar3.jpg " alt="Imagen de usuario " class="w-100 ml-4 d-none d-sm-block mt-5 ">
                     </div>
 
-                    <a href="#olvidarContraseña" class="mx-5 mb-1">¿Olvidaste tu Contraseña?</a>
-                    <a href="registro.html" class="mx-5 mx-1">Registrarme</a>
+                    <a href="#olvidarContraseña " class="mx-5 mb-1 ">¿Olvidaste tu Contraseña?</a>
+                    <a href="registro.html " class="mx-5 mx-1 ">Registrarme</a>
                 </section>
 
 
                 <!-- Modal Footer -->
-                <div class="modal-footer bg-dark text-light">
-                    <button type="button" class="btn btn-secondary">Ingresar</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+                <div class="modal-footer bg-dark text-light ">
+                    <button type="button " class="btn btn-secondary ">Ingresar</button>
+                    <button type="button " class="btn btn-secondary " data-bs-dismiss="modal ">Salir</button>
 
                 </div>
             </div>
         </div>
     </div>
-    <footer class="bg-dark text-light py-1">
-        <section class="container text-center mt-5">
+    <footer class="bg-dark text-light py-1 ">
+        <section class="container text-center mt-5 ">
 
-            <article class="row">
+            <article class="row ">
 
-                <div class="col-sm-12 col-md-6 mb-2">
-                    <h3 class="mb-2 mt-2 display-4">Encontranos en:</h3>
-                    <a href="http://facebook.com/" target="_blank" class="text-light mr-2 small"><i class="fab fa-facebook-square fa-2x mt-2">&nbsp;  RollingGames</i
+                <div class="col-sm-12 col-md-6 mb-2 ">
+                    <h3 class="mb-2 mt-2 display-4 ">Encontranos en:</h3>
+                    <a href="http://facebook.com/ " target="_blank " class="text-light mr-2 small "><i class="fab fa-facebook-square fa-2x mt-2 ">&nbsp;  RollingGames</i
                         ></a>
                     <br>
-                    <a href="https://twitter.com/" target="_blank" class="text-light mr-2 small"><i class="fab fa-twitter-square fa-2x mt-2">&nbsp; RollingGames</i
+                    <a href="https://twitter.com/ " target="_blank " class="text-light mr-2 small "><i class="fab fa-twitter-square fa-2x mt-2 ">&nbsp; RollingGames</i
                         ></a><br>
-                    <a href="error404.html" target="_blank" class="text-light mr-2 small"><i class="fab fa-instagram-square fa-2x mt-2">&nbsp; RollingGames</i
+                    <a href="error404.html " target="_blank " class="text-light mr-2 small "><i class="fab fa-instagram-square fa-2x mt-2 ">&nbsp; RollingGames</i
                         ></a>
 
                 </div>
                 <div class="col-sm-12 col-md-6 ">
-                    <h3 class="text-light mb-3 mt-2 display-4">Unite: </h3>
-                    <img src="img/badge-apple-store.svg" alt="logo apple store" class="mb-2 w-50" />
-                    <img src="img/google-play-badge-bb.svg" alt="logo play store" class="w-50" />
+                    <h3 class="text-light mb-3 mt-2 display-4 ">Unite: </h3>
+                    <img src="img/badge-apple-store.svg " alt="logo apple store " class="mb-2 w-50 " />
+                    <img src="img/google-play-badge-bb.svg " alt="logo play store " class="w-50 " />
                 </div>
             </article>
-            <p class="lead text-center mt-3">&copy; Copyright 2021 RollingGames. Todos los derechos son reservados</p>
+            <p class="lead text-center mt-3 ">&copy; Copyright 2021 RollingGames. Todos los derechos son reservados</p>
         </section>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="js/sliders.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js " integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW " crossorigin="anonymous "></script>
+    <script src="js/sliders.js "></script>
 
 </body>
 

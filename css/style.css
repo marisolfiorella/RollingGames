@@ -16,6 +16,27 @@
     width: 300px;
 }
 
+.coloroscuro {
+    background-color: rgb(24, 23, 23);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.colorclaro {
+    color: white;
+}
+
+
+/* Precio de los juegos */
+
+.precio {
+    margin-left: auto;
+    color: white;
+}
+
 
 /* SLIDER DE JUEGOS */
 
