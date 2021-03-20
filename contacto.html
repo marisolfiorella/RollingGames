@@ -52,27 +52,29 @@
             </nav>
         </header>
     </header>
-    <main class="bg-secondary ">
-        <section class="container py-5">
-            <article class="row">
+    <main>
+        <section class="container">
+            <article class="row ">
                 <div class="col-sm-12 col-md-6">
-                    <h2 class="text-light">Ponete en contacto con nosotros</h2>
-                    <form class="mt-4 border rounded py-2 px-2 bg-secondary border-dark">
-                        <div class="form-group">
-                            <label class="mt-2 text-light">Nombre y Apellido</label>
+                    <form class="my-5 border rounded shadow">
+                        <div class=" p-2 px-3 bg-secondary text-light">
+                            <h4>Ponete en contacto con nosotros</h4>
+                        </div>
+                        <div class="form-group m-3">
+                            <label class="mb-2">Nombre y Apellido</label>
                             <input type="text" placeholder="Juan Perez" class="form-control" required />
                         </div>
-                        <div class="form-group">
-                            <label class="mt-2 text-light">E-mail</label>
+                        <div class="form-group m-3">
+                            <label class="mb-2 ">E-mail</label>
                             <input type="email" placeholder="juanperez@gmail.com" class="form-control" required />
                         </div>
-                        <div class="form-group">
-                            <label class="mt-2 text-light">Tu consulta:</label>
+                        <div class="form-group m-3">
+                            <label class="mb-2">Tu consulta:</label>
                             <textarea placeholder="Escribi aqui tu mensaje" class="form-control" rows="4" required></textarea>
                         </div>
-                        <button class="btn btn-dark mt-3" type="submit">
-                Enviar
-              </button>
+                        <button class="my-3 container-fluid btn btn-secondary" type="submit">
+                            Enviar
+                         </button>
                     </form>
                 </div>
                 <div class="col-sm-12 col-md-6">
@@ -87,6 +89,49 @@
             </article>
         </section>
     </main>
+    <!-- Modal -->
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title " id="modalLoginLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- Modal Body -->
+                <section class="row ">
+                    <!-- Usuario y contraseña -->
+                    <div class="col-sm-12 col-md-7 d-flex justify-content-between align-items-center ">
+                        <div class="field-set container ">
+                            <i class="fas fa-user"></i>
+                            <span><input class="form-input mt-5 " id="txt-input" type="text" placeholder="Usuario" required></span>
+                            <br>
+                            <!--   Password -->
+                            <span class="input-item "><i class="fa fa-key"></i></span>
+                            <!--   Password Input-->
+                            <input class="form-input mt-2" type="password" placeholder="Contraseña" id="pwd" name="Contraseña" required>
+
+                        </div>
+                    </div>
+                    <!-- Imagen Usuario -->
+                    <div class="col-sm-12 col-md-3 d-flex justify-content-between align-items-center ">
+                        <img src="/img/avatar3.jpg" alt="Imagen de usuario" class="w-100 ml-4 d-none d-sm-block mt-5">
+                    </div>
+
+                    <a href="#olvidarContraseña" class="mx-5 mb-1">¿Olvidaste tu Contraseña?</a>
+                    <a href="registro.html" class="mx-5 mx-1">Registrarme</a>
+                </section>
+
+
+                <!-- Modal Footer -->
+                <div class="modal-footer bg-dark text-light">
+                    <button type="button" class="btn btn-secondary">Ingresar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="bg-dark text-light py-1">
         <section class="container text-center mt-5">
 
