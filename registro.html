@@ -11,7 +11,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/22e9f862aa.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
-
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_Hq5XxTd58WfUgtuXVURIr");
+      })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.5/dist/sweetalert2.all.min.js"></script>
     <title>RollingGames</title>
 </head>
 
@@ -54,7 +63,7 @@
         <h4>Completá los Datos para Registrarte</h4>
     </div>
     <div class="card-body">
-        <form onsubmit="validarGeneral(event)" id="formSuscripcion">
+        <form onsubmit="validarRegistro(event)" id="formRegistro">
             <div class="mb-3">
                 <label class="form-label">Usuario</label>
 <input type="text" class="form-control" id="usuario" onblur="campoRequerido(this)" required />
