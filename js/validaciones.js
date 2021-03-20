@@ -21,7 +21,7 @@ function validarPassword(pass) {
 function validarRPassword(rpass) {
   let p1 = document.getElementById("password").value;
   let p2 = document.getElementById("rPassword").value;
-  if (p1 === p2) {
+  if (p1 === p2 && p2.trim() != "") {
     rpass.className = "form-control is-valid";
     return true;
   } else {
