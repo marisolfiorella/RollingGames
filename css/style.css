@@ -29,6 +29,12 @@ a {
     color: white;
 }
 
+.carousel-control-next,
+.carousel-control-prev {
+    background: transparent;
+    border: none;
+}
+
 
 /* Precio de los juegos */
 
