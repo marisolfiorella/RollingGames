@@ -17,38 +17,40 @@
 
 <body class="coloroscuro">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark  " id="navigation-bar">
-            <section class="container">
-                <div class="container-fluid d-flex align-items-center">
-                    <a class="navbar-brand" href="index.html"><img src="img/icono.png" alt="Logo de la pagina RollingGames" id="iconoheader"></a>
-                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item mx-2">
-                                <a class="nav-link active" href="index.html">Inicio</a>
-                            </li>
-                            <li class="nav-item mx-2">
-                                <button type="button" class="btn btn-dark text-light" data-bs-toggle="modal" data-bs-target="#modalLogin">
-                                    Login
-                                  </button>
-                            </li>
-                            <li class="nav-item mx-2">
-                                <a class="nav-link" href="aboutus.html">About us</a>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contacto.html">Contactanos</a>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark  " id="navigation-bar">
+                <section class="container">
+                    <div class="container-fluid d-flex align-items-center">
+                        <a class="navbar-brand" href="index.html"><img src="img/icono.png" alt="Logo de la pagina RollingGames" id="iconoheader"></a>
+                        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link active" href="index.html">Inicio</a>
                                 </li>
                                 <li class="nav-item mx-2">
-                                    <a class="nav-link" href="admin.html">Admin</a>
+                                    <button type="button" class="btn btn-secondary text-light" data-bs-toggle="modal" data-bs-target="#modalLogin">
+                                        Login
+                                      </button>
                                 </li>
+                                <li class="nav-item mx-2">
+                                    <a class="nav-link" href="aboutus.html">About us</a>
+                                    <li class="nav-item mx-2 ">
+                                        <a class="nav-link" href="contacto.html">Contactanos</a>
+                                    </li>
+                                    <li class="nav-item mx-2">
+                                        <a class="nav-link" href="admin.html">Admin</a>
+                                    </li>
 
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </section>
-        </nav>
+                </section>
+            </nav>
+        </header>
     </header>
     <main>
         <div class="container">
@@ -320,43 +322,43 @@
     </main>
 
     <!-- Modal -->
-    <div class="modal fade " id="modalLogin " tabindex="-1 " aria-labelledby="modalLoginLabel " aria-hidden="true ">
-        <div class="modal-dialog ">
-            <div class="modal-content ">
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
                 <!-- Modal Header -->
-                <div class="modal-header bg-dark text-light ">
-                    <h5 class="modal-title " id="modalLoginLabel ">Login</h5>
-                    <button type="button " class="btn-close " data-bs-dismiss="modal " aria-label="Close "></button>
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title " id="modalLoginLabel">Login</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <!-- Modal Body -->
                 <section class="row ">
                     <!-- Usuario y contraseña -->
                     <div class="col-sm-12 col-md-7 d-flex justify-content-between align-items-center ">
                         <div class="field-set container ">
-                            <i class="fas fa-user "></i>
-                            <span><input class="form-input mt-5 " id="txt-input " type="text " placeholder="Usuario " required></span>
+                            <i class="fas fa-user"></i>
+                            <span><input class="form-input mt-5 " id="txt-input" type="text" placeholder="Usuario" required></span>
                             <br>
                             <!--   Password -->
-                            <span class="input-item "><i class="fa fa-key "></i></span>
+                            <span class="input-item "><i class="fa fa-key"></i></span>
                             <!--   Password Input-->
-                            <input class="form-input mt-2 " type="password " placeholder="Contraseña " id="pwd " name="Contraseña " required>
+                            <input class="form-input mt-2" type="password" placeholder="Contraseña" id="pwd" name="Contraseña" required>
 
                         </div>
                     </div>
                     <!-- Imagen Usuario -->
                     <div class="col-sm-12 col-md-3 d-flex justify-content-between align-items-center ">
-                        <img src="/img/avatar3.jpg " alt="Imagen de usuario " class="w-100 ml-4 d-none d-sm-block mt-5 ">
+                        <img src="/img/avatar3.jpg" alt="Imagen de usuario" class="w-100 ml-4 d-none d-sm-block mt-5">
                     </div>
 
-                    <a href="#olvidarContraseña " class="mx-5 mb-1 ">¿Olvidaste tu Contraseña?</a>
-                    <a href="registro.html " class="mx-5 mx-1 ">Registrarme</a>
+                    <a href="#olvidarContraseña" class="mx-5 mb-1">¿Olvidaste tu Contraseña?</a>
+                    <a href="registro.html" class="mx-5 mx-1">Registrarme</a>
                 </section>
 
 
                 <!-- Modal Footer -->
-                <div class="modal-footer bg-dark text-light ">
-                    <button type="button " class="btn btn-secondary ">Ingresar</button>
-                    <button type="button " class="btn btn-secondary " data-bs-dismiss="modal ">Salir</button>
+                <div class="modal-footer bg-dark text-light">
+                    <button type="button" class="btn btn-secondary">Ingresar</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
 
                 </div>
             </div>
