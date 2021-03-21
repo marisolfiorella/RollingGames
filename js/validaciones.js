@@ -95,7 +95,13 @@ function validarRegistro(event) {
   ) {
     enviarEmail();
   } else {
-      alert("debe corregir los datos");
+    Swal.fire({
+      title: "Error",
+      text: "Debe completar correctament el formulario",
+      icon: "error",
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: "Aceptar",
+    });
   }
 }
 
