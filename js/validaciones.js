@@ -1,9 +1,9 @@
 function campoRequerido(nombres) {
     if (nombres.value.trim() === "" || nombres.value.length >= 30) {
-        nombres.className = "form-control is-invalid bg-secondary";
+        nombres.className = "form-control is-invalid";
         return false;
     } else {
-        nombres.className = "form-control is-valid bg-secondary";
+        nombres.className = "form-control is-valid";
         return true;
     }
 }
@@ -33,10 +33,10 @@ function validarRPassword(rpass) {
 function validarEmail(email) {
     let expresion = /\w+@\w+\.[a-z]{2,}$/;
     if (email.value.trim() != "" && expresion.test(email.value)) {
-        email.className = "form-control is-valid bg-secondary";
+        email.className = "form-control is-valid";
         return true;
     } else {
-        email.className = "form-control is-invalid bg-secondary";
+        email.className = "form-control is-invalid";
         return false;
     }
 }
@@ -81,22 +81,28 @@ function validarTerminos() {
 }
 
 function validarRegistro(event) {
-    event.preventDefault();
-    console.log("desde validar registros");
-    if (
-        campoRequerido(document.getElementById("usuario")) &&
-        validarPassword(document.getElementById("password")) &&
-        validarRPassword(document.getElementById("rPassword")) &&
-        campoRequerido(document.getElementById("nombre")) &&
-        validarEmail(document.getElementById("email")) &&
-        validarTelefono(document.getElementById("telefono")) &&
-        validarEdad(document.getElementById("edad")) &&
-        validarTerminos()
-    ) {
-        enviarEmail();
-    } else {
-        alert("debe corregir los datos");
-    }
+  event.preventDefault();
+  console.log("desde validar registros");
+  if (
+    campoRequerido(document.getElementById("usuario")) &&
+    validarPassword(document.getElementById("password")) &&
+    validarRPassword(document.getElementById("rPassword")) &&
+    campoRequerido(document.getElementById("nombre")) &&
+    validarEmail(document.getElementById("email")) &&
+    validarTelefono(document.getElementById("telefono")) &&
+    validarEdad(document.getElementById("edad")) &&
+    validarTerminos()
+  ) {
+    enviarEmail();
+  } else {
+    Swal.fire({
+      title: "Error",
+      text: "Debe completar correctament el formulario",
+      icon: "error",
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: "Aceptar",
+    });
+  }
 }
 
 function enviarEmail() {
@@ -149,7 +155,7 @@ function enviarEmail() {
 }
 
 //Validaciones adicionales para Contacto
-function validarConsulta(consulta) {
+/* function validarConsulta(consulta) {
     if (consulta.value.trim() === "" || consulta.value.length <= 10) {
         consulta.className = "form-control is-invalid bg-secondary";
         return false;
@@ -289,4 +295,4 @@ export function validarAdmin(event) {
     } else {
         alert("debe corregir los datos");
     }
-}
+} */
