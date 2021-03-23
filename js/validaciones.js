@@ -176,3 +176,37 @@ function validarContacto(event) {
 function enviarEmailContacto() {
 
 }
+
+
+// VALIDACION LOGIN
+function validarUsuarios(usuarios) {
+    // let input = document.getElementById('nombreApellido');
+
+    if (usuarios.value === '') {
+        usuarios.className = 'form-control is-invalid'
+        return false;
+    } else {
+        usuarios.className = 'form-control is-valid'
+        return true;
+    }
+}
+
+function validarPasswords(passwords) {
+    if (passwords.value.length >= 8) {
+        passwords.className = "form-control is-valid";
+        return true;
+    } else {
+        passwords.className = "form-control is-invalid";
+        return false;
+    }
+
+}
+
+function validarGeneralLogin(event) {
+    event.preventDefault();
+    if (validarUsuarios(document.getElementById('usuarios')) == true && validarPasswords(document.getElementById('passwords')) == true) {
+        alert('Usted inicio Sesion');
+    } else {
+        alert('Debe ingresar un usuaario y contraseña correctos')
+    }
+}

@@ -308,31 +308,45 @@
                 <!-- Modal Body -->
                 <section class="row ">
                     <!-- Usuario y contraseña -->
-                    <div class="col-sm-12 col-md-7 d-flex justify-content-between align-items-center ">
-                        <div class="field-set container ">
-                            <i class="fas fa-user"></i>
-                            <span><input class="form-input mt-5 " id="txt-input" type="text" placeholder="Usuario" required></span>
-                            <br>
-                            <!--   Password -->
-                            <span class="input-item "><i class="fa fa-key"></i></span>
-                            <!--   Password Input-->
-                            <input class="form-input mt-2" type="password" placeholder="Contraseña" id="pwd" name="Contraseña" required>
 
-                        </div>
+                    <div class="col-sm-12 col-md-7 d-flex justify-content-between align-items-center ">
+                        <form onsubmit="validarGeneralLogin(event)" id="formLogin">
+                            <div class="field-set container ">
+                                <!-- Usuario -->
+                                <i class="fas fa-user"></i>
+                                <span><input class="form-input mt-5 " id="usuarios" type="text" placeholder="Usuario" onblur="validarUsuarios(this)" required>
+                                    <div class="valid-feedback"></div>
+                                    <div class="invalid-feedback">Debe ingresar un usuario correcto</div>
+                                </span>
+
+                                <br>
+                                <!--   Password -->
+                                <span class="input-item "><i class="fa fa-key"></i></span>
+                                <!--   Password Input-->
+                                <input class="form-input mt-2" type="password" placeholder="Contraseña" id="passwords" name="Contraseña" onblur="valirdarPasswords(this)" required>
+                                <div class="valid-feedback"></div>
+                                <div class="invalid-feedback">Debe ingresar su contraseña</div>
+
+
+                            </div>
+                        </form>
                     </div>
+
                     <!-- Imagen Usuario -->
                     <div class="col-sm-12 col-md-3 d-flex justify-content-between align-items-center ">
                         <img src="/img/avatar3.jpg" alt="Imagen de usuario" class="w-100 ml-4 d-none d-sm-block mt-5">
                     </div>
 
-                    <a href="#olvidarContraseña" class="mx-5 mb-1">¿Olvidaste tu Contraseña?</a>
-                    <a href="registro.html" class="mx-5 mx-1">Registrarme</a>
+                    <a href="error404.html" class="mx-5 mb-1 text-primary">¿Olvidaste tu Contraseña?</a>
+                    <a href="registro.html" class="mx-5 mx-1 text-primary">Registrarme</a>
                 </section>
 
 
                 <!-- Modal Footer -->
                 <div class="modal-footer bg-dark text-light">
-                    <button type="button" class="btn btn-secondary">Ingresar</button>
+                    <button type="submit" class=" btn btn-secondary">
+                       Ingresar
+                      </button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
 
                 </div>
@@ -366,6 +380,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js " integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW " crossorigin="anonymous "></script>
     <script src="js/sliders.js "></script>
+    <script src="/js/validaciones.js"></script>
 
 </body>
 
