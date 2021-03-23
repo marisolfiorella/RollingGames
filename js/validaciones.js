@@ -180,23 +180,21 @@ function enviarEmailContacto() {
 
 // VALIDACION LOGIN
 function validarUsuarios(usuarios) {
-    // let input = document.getElementById('nombreApellido');
-
-    if (usuarios.value === '') {
-        usuarios.className = 'form-control is-invalid'
+    if (usuarios.value.trim() === "" || usuarios.value.length >= 10) {
+        usuarios.className = "form-input is-invalid ";
         return false;
     } else {
-        usuarios.className = 'form-control is-valid'
+        usuarios.className = "form-input is-valid ";
         return true;
     }
 }
 
-function validarPasswords(passwords) {
-    if (passwords.value.length >= 8) {
-        passwords.className = "form-control is-valid";
+function validarContraseña(contraseña) {
+    if (contraseña.value.length >= 8) {
+        contraseña.className = "form-input is-valid";
         return true;
     } else {
-        passwords.className = "form-control is-invalid";
+        contraseña.className = "form-input is-invalid";
         return false;
     }
 
@@ -204,9 +202,91 @@ function validarPasswords(passwords) {
 
 function validarGeneralLogin(event) {
     event.preventDefault();
-    if (validarUsuarios(document.getElementById('usuarios')) == true && validarPasswords(document.getElementById('passwords')) == true) {
+    if (validarUsuarios(document.getElementById('usuarios')) == true && validarContraseña(document.getElementById('contraseña')) == true) {
         alert('Usted inicio Sesion');
     } else {
         alert('Debe ingresar un usuaario y contraseña correctos')
+    }
+}
+
+
+//VALIDACION ADMIN
+
+export function validarCodigo(codigo) {
+    if (codigo.value.trim() != '' && !isNaN(codigo.value)) {
+        codigo.className = 'form-control is-valid'
+        return true;
+    } else {
+        codigo.className = 'form-control is-invalid'
+        return false;
+
+    }
+}
+
+export function validarNombre(nombre) {
+    if (nombre.value.trim() === "" || nombre.value.length >= 30) {
+        nombre.className = "form-control is-invalid ";
+        return false;
+    } else {
+        nombre.className = "form-control is-valid ";
+        return true;
+    }
+}
+
+export function validarNumSerie(numSerie) {
+    if (numSerie.value.trim() != "" && !isNaN(numSerie.value)) {
+        numSerie.className = "form-control is-valid";
+        return true;
+    } else {
+        numSerie.className = "form-control is-invalid";
+        return false;
+    }
+}
+
+export function validarCategoria(categoria) {
+    if (categoria.value.trim() === "" || categoria.value.length >= 30) {
+        categoria.className = "form-control is-invalid ";
+        return false;
+    } else {
+        categoria.className = "form-control is-valid";
+        return true;
+    }
+}
+
+export function validarDescripcion(descripcion) {
+    if (descripcion.value.trim() != '' && descripcion.value.length > 10) {
+        descripcion.className = 'form-control is valid'
+        return true;
+    } else {
+        descripcion.className = 'form-control is-invalid';
+        return false;
+    }
+}
+
+export function validarImagen(imagen) {
+    if (imagen.value === '') {
+        imagen.className = 'form-control is-invalid'
+        return false;
+    } else {
+        imagen.className = 'form-control is-valid'
+        return true;
+    }
+}
+
+export function validarAdmin(event) {
+    event.preventDefault();
+
+    if (
+        validarNombre(document.getElementById("nombre")) &&
+        validarNumSerie(document.getElementById("numSerie")) &&
+        validarCategoria(document.getElementById("categoria")) &&
+        validarDescripcion(document.getElementById("descripcion")) &&
+        validarImagen(document.getElementById("imagen"))
+
+
+    ) {
+        alert("Datos Correctos")
+    } else {
+        alert("debe corregir los datos");
     }
 }

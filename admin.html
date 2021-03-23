@@ -51,11 +51,11 @@
     </header>
     <main>
         <section class="container mb-5">
-            <h2 class="mt-4 text-light">Administración de productos</h2>
+            <h2 class="mt-4 text-light display-4">Administración de productos</h2>
             <hr class="text-light">
             <div class="d-flex">
                 <h3 class="mb-4 text-light">Tabla de productos:</h3>
-                <button type="button" class="btn btn-secondary ms-auto" data-bs-toggle="modal" data-bs-target="#modalAgregarVideojuego">
+                <button type="button" class="btn btn-secondary ms-auto" id="btnAgregar" data-bs-toggle="modal" data-bs-target="#modalJuego">
                     <i class="far fa-plus-square fa-3x"></i>
                   </button>
             </div>
@@ -71,19 +71,9 @@
                             <th scope="col">Imagen</th>
                         </tr>
                     </thead>
-                    <tbody id='tablaRollingGames' class="text-light">
-                        <tr>
-                            <td>1</td>
-                            <td>Grand Theft Auto</td>
-                            <td>01937</td>
-                            <td>Juegos de supervivencia</td>
-                            <td>Cuenta la historia de distintos criminales que se van relacionando y envolviendo en cada vez más problemas.</td>
-                            <td>Imagen no disponible</td>
-                            <td>
-                                <button type="button" class="btn btn-warning ms-auto mb-2 p-2" data-bs-toggle="modal" data-bs-target="#modalAgregarVideojuego"><i class="far fa-edit fa-2x "></i></button>
-                                <button class="btn btn-danger ms-auto mb-2 text-dark"><i class="fas fa-trash-alt fa-2x"></i></button>
-                            </td>
-                        </tr>
+                    <tbody id="tablaJuego" class="text-light">
+
+
                     </tbody>
                 </table>
             </div>
@@ -114,34 +104,51 @@
         </section>
     </footer>
     <!-- Modal ADMIN-->
-    <div class="modal fade" id="modalAgregarVideojuego" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalJuego" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-light">
                     <h5 class="modal-title" id="exampleModalLabel">Agregar videojuego</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body bg-secondary text-light">
-                    <form id="formRollingGames">
+                <div class="modal-body bg-light">
+                    <form onsubmit="guardarJuego(event)" id="formAdmin">
+                        <div class="mb-3">
+                            <label class="form-label">Codigo</label>
+                            <input type="text" class="form-input" id="nombre" placeholder="Ingrese el codigo del juego" onblur="validarCodigo(this)" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">Debe ingresar un codigo</div>
+                        </div>
+
                         <div class="mb-3">
                             <label class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del videojuego.">
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del juego" onblur="validarNombre(this)" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">Debe ingresar un nombre</div>
                         </div>
+
                         <div class="mb-3">
                             <label class="form-label">Número de serie</label>
-                            <input type="text" class="form-control" id="numSerie" placeholder="Ingrese el número de serie del videojuego. Ej: 01937">
+                            <input type="text" class="form-control" id="numSerie" placeholder="Ingrese el número de serie del videojuego. Ej: 01937" onblur="validarNumSerie(this)" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">Debe ingresar un numero de serie Ej: 01937</div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Categoría</label>
-                            <input type="text" class="form-control" id="categoria" placeholder="Ingrese la categoría del videojuego. Ej: juegos de supervivencia">
+                            <input type="text" class="form-control" id="categoria" placeholder="Ingrese la categoría del videojuego. Ej: juegos de supervivencia" onblur="validarCategoria(this)" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">Debe ingresar una categoria</div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Descripción</label>
-                            <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una breve descripción sobre el videojuego.">
+                            <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una breve descripción sobre el videojuego." onblur="validarDescripcion(this)" required>
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback">Debe ingresar mas de 10 caracteres</div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Imagen</label>
-                            <input type="text" class="form-control" id="imagen" placeholder="Ingrese el nombre de la imagen">
+                            <input type="text" class="form-control" id="imagen" placeholder="Ingrese el nombre de la imagen" onblur="validarImagen(this)" required>
+
                         </div>
                     </form>
                 </div>
@@ -196,6 +203,8 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js " integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW " crossorigin="anonymous "></script>
     <script src="js/sliders.js "></script>
+    <script src="js/validaciones.js"></script>
+    <script src="js/admin.js"></script>
 </body>
 
 </html>
