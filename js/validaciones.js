@@ -1,5 +1,6 @@
-let user = "admin"
-let pass = "admin"
+let user = "admin";
+let pass = "admin";
+const modalDeLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
 
 function campoRequerido(nombres) {
   if (nombres.value.trim() === "" || nombres.value.length >= 30) {
@@ -229,67 +230,36 @@ function enviarEmailContacto() {
     );
 }
 
-
-
-
 // VALIDACION LOGIN
 
-function validarUsuarios(usuario){
-    if (usuario.value === user && usuario.value === pass){
-    console.log ('usuario correcto');
-    return true
-  }else {
-    console.log ('usuario incorrecto');
-    return false
+function validarUsuarios(usuario) {
+  if (usuario.value === user && usuario.value === pass) {
+    return true;
+  } else {
+    return false;
   }
 }
 
 function validarGeneralLogin(event) {
   event.preventDefault();
-  console.log('desde validarGeneralLogin')
-  if (validarUsuarios(document.getElementById('usuarios')) &&
-  validarUsuarios(document.getElementById('userPass'))){
-    console.log('usuario y contraseña validados')
-    alert ('usuario y contraseña correcto');
-  }else {
-    alert ('usuario y contraseña incorrectos');
+  if (
+    validarUsuarios(document.getElementById("usuarios")) &&
+    validarUsuarios(document.getElementById("userPass"))
+  ) {
+    console.log("usuario y contraseña validados");
+    document.getElementById("formLogin").reset();
+    modalDeLogin.hide();
+    document.getElementById('navbarAdmin');
+    navbarAdmin.className = "nav-link"
+  } else {
+    document.getElementById("formLogin").reset();
+    alert("usuario y contraseña incorrectos");
   }
 }
 
-/* function validarUsuarios(usuarios) {
-    if (usuarios.value.trim() === "" || usuarios.value.length >= 10) {
-        usuarios.className = "form-input is-invalid ";
-        return false;
-    } else {
-        usuarios.className = "form-input is-valid ";
-        return true;
-    }
-}
-
-function validarContraseña(contraseña) {
-    if (contraseña.value.length >= 8) {
-        contraseña.className = "form-input is-valid";
-        return true;
-    } else {
-        contraseña.className = "form-input is-invalid";
-        return false;
-    }
-
-}
-
-function validarGeneralLogin(event) {
-    event.preventDefault();
-    if (validarUsuarios(document.getElementById('usuarios')) == true && validarContraseña(document.getElementById('contraseña')) == true) {
-        alert('Usted inicio Sesion');
-    } else {
-        alert('Debe ingresar un usuaario y contraseña correctos')
-    }
-}
-
-
 //VALIDACION ADMIN
 
-export function validarCodigo(codigo) {
+/* export function validarCodigo(codigo) {
     if (codigo.value.trim() != '' && !isNaN(codigo.value)) {
         codigo.className = 'form-control is-valid'
         return true;
@@ -366,4 +336,5 @@ export function validarAdmin(event) {
     } else {
         alert("debe corregir los datos");
     }
-}  */
+}  
+ */

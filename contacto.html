@@ -86,7 +86,7 @@
                   >
                 </li>
                 <li class="nav-item mx-2">
-                  <a class="nav-link" href="admin.html">Admin</a>
+                  <a class="nav-link d-none" id="navbarAdmin" href="admin.html">Admin</a>
                 </li>
               </ul>
             </div>
@@ -175,86 +175,62 @@
       </section>
     </main>
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="modalLogin"
-      tabindex="-1"
-      aria-labelledby="modalLoginLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
       <div class="modal-dialog">
-        <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header bg-dark text-light">
-            <h5 class="modal-title" id="modalLoginLabel">Login</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <!-- Modal Body -->
-          <section class="row">
-            <!-- Usuario y contraseña -->
-            <div
-              class="col-sm-12 col-md-7 d-flex justify-content-between align-items-center"
-            >
-              <div class="field-set container">
-                <i class="fas fa-user"></i>
-                <span
-                  ><input
-                    class="form-input mt-5"
-                    id="txt-input"
-                    type="text"
-                    placeholder="Usuario"
-                    required
-                /></span>
-                <br />
-                <!--   Password -->
-                <span class="input-item"><i class="fa fa-key"></i></span>
-                <!--   Password Input-->
-                <input
-                  class="form-input mt-2"
-                  type="password"
-                  placeholder="Contraseña"
-                  id="pwd"
-                  name="Contraseña"
-                  required
-                />
+          <div class="modal-content">
+              <!-- Modal Header -->
+              <div class="modal-header bg-dark text-light">
+                  <h5 class="modal-title " id="modalLoginLabel">Login</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-            </div>
-            <!-- Imagen Usuario -->
-            <div
-              class="col-sm-12 col-md-3 d-flex justify-content-between align-items-center"
-            >
-              <img
-                src="/img/avatar3.jpg"
-                alt="Imagen de usuario"
-                class="w-100 ml-4 d-none d-sm-block mt-5"
-              />
-            </div>
+              <!-- Modal Body -->
+              <section class="row ">
+                  <!-- Usuario y contraseña -->
 
-            <a href="#olvidarContraseña" class="mx-5 mb-1"
-              >¿Olvidaste tu Contraseña?</a
-            >
-            <a href="registro.html" class="mx-5 mx-1">Registrarme</a>
-          </section>
+                  <div class="col-sm-12 col-md-7 d-flex justify-content-between align-items-center ">
+                      <form onsubmit="validarGeneralLogin(event)" id="formLogin">
+                          <div class="field-set container ">
+                              <!-- Usuario -->
 
-          <!-- Modal Footer -->
-          <div class="modal-footer bg-dark text-light">
-            <button type="button" class="btn btn-secondary">Ingresar</button>
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Salir
-            </button>
+                              <input class="form-input mt-5 mx-4 " id="usuarios" type="text" placeholder="Usuario" onblur="validarUsuarios(this)" required>
+                              <div class="valid-feedback"></div>
+                              <div class="invalid-feedback">Debe ingresar un usuario correcto</div>
+
+
+                              <br>
+                              <!--   Password -->
+
+                              <!--   Password Input-->
+                              <input class="form-input mt-3 mx-4 " type="password" placeholder="Contraseña" id="userPass" name="userPass" onblur="validarUsuarios(this)" required>
+                              <div class="valid-feedback"></div>
+                              <div class="invalid-feedback">Debe ingresar su contraseña</div>
+
+
+                          </div>
+                      </form>
+                  </div>
+
+                  <!-- Imagen Usuario -->
+                  <div class="col-sm-12 col-md-3 d-flex justify-content-between align-items-center ">
+                      <img src="/img/avatar3.jpg" alt="Imagen de usuario" class="w-100 ml-4 d-none d-sm-block mt-5">
+                  </div>
+
+                  <a href="error404.html" class="mx-5 mb-1 text-primary">¿Olvidaste tu Contraseña?</a>
+                  <a href="registro.html" class="mx-5 mx-1 text-primary">Registrarme</a>
+              </section>
+
+
+              <!-- Modal Footer -->
+              <div class="modal-footer bg-dark text-light">
+                  <button type="submit" class=" btn btn-secondary" form="formLogin">
+                     Ingresar
+                    </button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button>
+
+              </div>
           </div>
-        </div>
       </div>
-    </div>
+  </div>
     <footer class="bg-dark text-light py-1">
       <section class="container text-center mt-5">
         <article class="row">
