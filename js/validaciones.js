@@ -1,3 +1,6 @@
+let user = "admin"
+let pass = "admin"
+
 function campoRequerido(nombres) {
   if (nombres.value.trim() === "" || nombres.value.length >= 30) {
     nombres.className = "form-control is-invalid";
@@ -226,11 +229,34 @@ function enviarEmailContacto() {
     );
 }
 
-/*
+
 
 
 // VALIDACION LOGIN
-function validarUsuarios(usuarios) {
+
+function validarUsuarios(usuario){
+    if (usuario.value === user && usuario.value === pass){
+    console.log ('usuario correcto');
+    return true
+  }else {
+    console.log ('usuario incorrecto');
+    return false
+  }
+}
+
+function validarGeneralLogin(event) {
+  event.preventDefault();
+  console.log('desde validarGeneralLogin')
+  if (validarUsuarios(document.getElementById('usuarios')) &&
+  validarUsuarios(document.getElementById('userPass'))){
+    console.log('usuario y contraseña validados')
+    alert ('usuario y contraseña correcto');
+  }else {
+    alert ('usuario y contraseña incorrectos');
+  }
+}
+
+/* function validarUsuarios(usuarios) {
     if (usuarios.value.trim() === "" || usuarios.value.length >= 10) {
         usuarios.className = "form-input is-invalid ";
         return false;
@@ -340,4 +366,4 @@ export function validarAdmin(event) {
     } else {
         alert("debe corregir los datos");
     }
-} */
+}  */
