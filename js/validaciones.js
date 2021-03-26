@@ -282,7 +282,7 @@ function validarNombre(input) {
 
 function validarCategoria(categoria) {
     if (categoria.value.trim() != '') {
-        categoria.className = 'form-control is valid'
+        categoria.className = 'form-control is-valid'
         return true;
     } else {
         categoria.className = 'form-control is-invalid';
@@ -292,7 +292,7 @@ function validarCategoria(categoria) {
 
 function validarDescripcion(descripcion) {
     if (descripcion.value.trim() != '' && descripcion.value.length > 10) {
-        descripcion.className = 'form-control is valid'
+        descripcion.className = 'form-control is-valid'
         return true;
     } else {
         descripcion.className = 'form-control is-invalid';
