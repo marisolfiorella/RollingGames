@@ -88,45 +88,6 @@
                 </table>
             </div>
         </section>
-        <!-- Modal RollingGames -->
-        <!-- Modal -->
-        <div class="modal fade" id="modalAgregarVideojuego" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Agregar videojuego</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form id="formRollingGames">
-                            <div class="mb-3">
-                                <label class="form-label">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del videojuego.">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Categoria</label>
-                                <input type="text" class="form-control" id="categoria" placeholder="Ingrese el número de serie del videojuego. Ej: 01937">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Descripción</label>
-                                <input type="text" class="form-control" id="descripcion" placeholder="Ingrese la categoría del videojuego. Ej: juegos de supervivencia">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Publicado</label>
-                                <input type="text" class="form-control" id="publicado">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Imagen</label>
-                                <input type="text" class="form-control" id="imagen" placeholder="Ingrese una breve descripción sobre el videojuego.">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary text-center">Guardar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </main>
     <footer class="bg-dark text-light py-1 ">
         <section class="container text-center mt-5 ">
@@ -162,40 +123,40 @@
                     <!-- Formulario -->
                     <form id="formJuego" onsubmit="agregarJuego(event)">
                         <div class="mb-3">
-                            <label class="form-label">Codigo</label>
-                            <input type="text" class="form-input" id="codigo" placeholder="Ingrese el codigo del juego" onblur="validarCodigo(this)">
+                            <label class="form-label">Código</label>
+                            <input type="text" class="form-input" id="codigo" placeholder="Ingrese el código del juego." onblur="validarCodigo(this)">
                             <div class="valid-feedback"></div>
-                            <div class="invalid-feedback">Debe ingresar un codigo</div>
+                            <div class="invalid-feedback">Debe ingresar un código.</div>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del juego" onblur="validarNombre(this)">
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del juego." onblur="validarNombre(this)">
                             <div class="valid-feedback"></div>
-                            <div class="invalid-feedback">Debe ingresar un nombre</div>
+                            <div class="invalid-feedback">Debe ingresar un nombre.</div>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label">Número de serie</label>
-                            <input type="text" class="form-control" id="numSerie" placeholder="Ingrese el número de serie del videojuego. Ej: 01937" onblur="validarSerie(this)">
-                            <div class="valid-feedback"></div>
-                            <div class="invalid-feedback">Debe ingresar un numero de serie Ej: 01937</div>
-                        </div>
-                        <div class="mb-3">
                             <label class="form-label">Categoría</label>
-                            <input type="text" class="form-control" id="categoria" placeholder="Ingrese la categoría del videojuego. Ej: juegos de supervivencia" onblur="validarCategoria(this)">
+                            <input type="text" class="form-control" id="categoria" placeholder="Ingrese la categoría del juego. Ej: juegos de supervivencia." onblur="validarSerie(this)">
                             <div class="valid-feedback"></div>
-                            <div class="invalid-feedback">Debe ingresar una categoria</div>
+                            <div class="invalid-feedback">Debe ingresar una categoría.</div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Descripción</label>
-                            <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una breve descripción sobre el videojuego." onblur="validarDescripcion(this)">
+                            <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una breve descripción sobre el videojuego." onblur="validarCategoria(this)">
                             <div class="valid-feedback"></div>
-                            <div class="invalid-feedback">Debe ingresar mas de 10 caracteres</div>
+                            <div class="invalid-feedback">Debe ingresar una descripción.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Publicado</label>
+                            <input type="text" class="form-control" id="publicado" onblur="validarDescripcion(this)">
+                            <div class="valid-feedback"></div>
+                            <div class="invalid-feedback"></div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Imagen</label>
-                            <input type="text" class="form-control" id="imagen" placeholder="Ingrese el nombre de la imagen" onblur="validarImagen(this)">
+                            <input type="text" class="form-control" id="imagen" placeholder="Ingrese el nombre de la imagen." onblur="validarImagen(this)">
 
                         </div>
                         <button type="submit" class="btn btn-secondary mt-3 mx-auto d-block">Guardar</button>
