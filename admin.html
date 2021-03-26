@@ -63,21 +63,25 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre de juego</th>
-                            <th scope="col">Número de serie</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Descripción</th>
+                            <th scope="col" class="mr-3">Publicado</th>
+                            <th scope="col">Opciones</th>
                         </tr>
                     </thead>
                     <tbody id='tablaRollingGames' class="text-light">
                         <tr>
                             <td>1</td>
                             <td>Grand Theft Auto</td>
-                            <td>01937</td>
                             <td>Juegos de supervivencia</td>
-                            <td>Cuenta la historia de distintos criminales que se van relacionando y envolviendo en cada vez más problemas.</td>
+                            <td>Descripción breve.</td>
+                            <td></td>
                             <td>
-                                <button class="btn btn-success mb-2">Editar</button>
-                                <button class="btn btn-danger">Borrar</button>
+                                <div class="row">
+                                    <button class="btn btn-light mb-2"><i class="fas fa-edit"></i></button>
+                                    <button class="btn btn-light mb-2"><i class="far fa-trash-alt"></i></button>
+                                    <button class="btn btn-light mb-2"><i class="far fa-star"></i></button>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
@@ -100,16 +104,20 @@
                                 <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del videojuego.">
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Número de serie</label>
-                                <input type="text" class="form-control" id="numSerie" placeholder="Ingrese el número de serie del videojuego. Ej: 01937">
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Categoría</label>
-                                <input type="text" class="form-control" id="categoria" placeholder="Ingrese la categoría del videojuego. Ej: juegos de supervivencia">
+                                <label class="form-label">Categoria</label>
+                                <input type="text" class="form-control" id="categoria" placeholder="Ingrese el número de serie del videojuego. Ej: 01937">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Descripción</label>
-                                <input type="text" class="form-control" id="descripcion" placeholder="Ingrese una breve descripción sobre el videojuego.">
+                                <input type="text" class="form-control" id="descripcion" placeholder="Ingrese la categoría del videojuego. Ej: juegos de supervivencia">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Publicado</label>
+                                <input type="text" class="form-control" id="publicado">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Imagen</label>
+                                <input type="text" class="form-control" id="imagen" placeholder="Ingrese una breve descripción sobre el videojuego.">
                             </div>
                         </form>
                     </div>
