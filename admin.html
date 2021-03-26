@@ -65,21 +65,69 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Nombre de juego</th>
-                            <th scope="col">Número de serie</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Descripción</th>
-                            <th scope="col">Imagen</th>
+                            <th scope="col" class="mr-3">Publicado</th>
+                            <th scope="col">Opciones</th>
                         </tr>
-                    </thead>
-                    <tbody id="tablaJuego" class="text-light">
-
-
-                    </tbody>
+                        <tbody id='tablaRollingGames' class="text-light">
+                            <tr>
+                                <td>1</td>
+                                <td>Grand Theft Auto</td>
+                                <td>Juegos de supervivencia</td>
+                                <td>Descripción breve.</td>
+                                <td></td>
+                                <td>
+                                    <div class="row">
+                                        <button class="btn btn-light mb-2"><i class="fas fa-edit"></i></button>
+                                        <button class="btn btn-light mb-2"><i class="far fa-trash-alt"></i></button>
+                                        <button class="btn btn-light mb-2"><i class="far fa-star"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
                 </table>
             </div>
         </section>
-
-
+        <!-- Modal RollingGames -->
+        <!-- Modal -->
+        <div class="modal fade" id="modalAgregarVideojuego" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar videojuego</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formRollingGames">
+                            <div class="mb-3">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre del videojuego.">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Categoria</label>
+                                <input type="text" class="form-control" id="categoria" placeholder="Ingrese el número de serie del videojuego. Ej: 01937">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Descripción</label>
+                                <input type="text" class="form-control" id="descripcion" placeholder="Ingrese la categoría del videojuego. Ej: juegos de supervivencia">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Publicado</label>
+                                <input type="text" class="form-control" id="publicado">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Imagen</label>
+                                <input type="text" class="form-control" id="imagen" placeholder="Ingrese una breve descripción sobre el videojuego.">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary text-center">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="bg-dark text-light py-1 ">
         <section class="container text-center mt-5 ">
