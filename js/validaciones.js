@@ -1,9 +1,13 @@
+let user = "admin";
+let pass = "admin";
+const modalDeLogin = new bootstrap.Modal(document.getElementById("modalLogin"));
+// VALIDACION REGISTRO
 function campoRequerido(nombres) {
     if (nombres.value.trim() === "" || nombres.value.length >= 30) {
-        nombres.className = "form-control is-invalid bg-secondary";
+        nombres.className = "form-control is-invalid";
         return false;
     } else {
-        nombres.className = "form-control is-valid bg-secondary";
+        nombres.className = "form-control is-valid";
         return true;
     }
 }
@@ -33,16 +37,20 @@ function validarRPassword(rpass) {
 function validarEmail(email) {
     let expresion = /\w+@\w+\.[a-z]{2,}$/;
     if (email.value.trim() != "" && expresion.test(email.value)) {
-        email.className = "form-control is-valid bg-secondary";
+        email.className = "form-control is-valid";
         return true;
     } else {
-        email.className = "form-control is-invalid bg-secondary";
+        email.className = "form-control is-invalid";
         return false;
     }
 }
 
 function validarTelefono(telefono) {
-    if (telefono.value.trim() != "" && !isNaN(telefono.value)) {
+    if (
+        telefono.value.trim() != "" &&
+        !isNaN(telefono.value) &&
+        telefono.value <= 999999999999999
+    ) {
         telefono.className = "form-control is-valid";
         return true;
     } else {
@@ -66,9 +74,12 @@ function validarEdad(inputedad) {
 }
 
 let checkTerminos = document.getElementById("terminos");
-checkTerminos.addEventListener("change", function() {
-    validarTerminos();
-});
+
+function checkBox() {
+    checkTerminos.addEventListener("change", function() {
+        validarTerminos();
+    });
+}
 
 function validarTerminos() {
     if (checkTerminos.checked) {
@@ -95,7 +106,13 @@ function validarRegistro(event) {
     ) {
         enviarEmail();
     } else {
-        alert("debe corregir los datos");
+        Swal.fire({
+            title: "Error",
+            text: "Debe completar correctamente el formulario",
+            icon: "error",
+            confirmButtonColor: "#181717",
+            confirmButtonText: "Aceptar",
+        });
     }
 }
 
@@ -112,13 +129,12 @@ function enviarEmail() {
         })
         .then(
             function(response) {
-                // esta funcion se ejecuta cuando se cumple la promesa
                 console.log(response);
                 Swal.fire({
                     title: "¡Gracias!",
                     text: "Usuario Registrado Correctamente",
                     icon: "success",
-                    confirmButtonColor: "#3085d6",
+                    confirmButtonColor: "#181717",
                     confirmButtonText: "Entendido!",
                 });
 
@@ -141,20 +157,23 @@ function enviarEmail() {
                 terminos.className = "form-check-input";
             },
             function(error) {
-                // esta funcion se ejecuta cuando dio error la promesa
                 console.log(error);
                 alert("No se pudo enviar el mail");
             }
         );
 }
 
-//Validaciones adicionales para Contacto
+//VALIDACION CONTACTO
 function validarConsulta(consulta) {
-    if (consulta.value.trim() === "" || consulta.value.length <= 10) {
-        consulta.className = "form-control is-invalid bg-secondary";
+    if (
+        consulta.value.trim() === "" ||
+        consulta.value.length <= 10 ||
+        consulta.value.length >= 500
+    ) {
+        consulta.className = "form-control is-invalid";
         return false;
     } else {
-        consulta.className = "form-control is-valid bg-secondary";
+        consulta.className = "form-control is-valid";
         return true;
     }
 }
@@ -165,14 +184,141 @@ function validarContacto(event) {
     if (
         campoRequerido(document.getElementById("nombre")) &&
         validarEmail(document.getElementById("email")) &&
-        validarConsulta(document.getElementById('consulta'))
+        validarConsulta(document.getElementById("consulta"))
     ) {
         enviarEmailContacto();
     } else {
-        alert("Debe corregir los datos de contacto");
+        Swal.fire({
+            title: "Error",
+            text: "Debe completar correctamente el formulario",
+            icon: "error",
+            confirmButtonColor: "#181717",
+            confirmButtonText: "Aceptar",
+        });
     }
 }
 
 function enviarEmailContacto() {
+    emailjs
+        .send("service_zrczdis", "template_upouiwm", {
+            from_name: document.getElementById("nombre").value,
+            to_name: "Administrador",
+            from_email: document.getElementById("email").value,
+            message: document.getElementById("consulta").value,
+        })
+        .then(
+            function(response) {
+                console.log(response);
+                Swal.fire({
+                    title: "¡Consulta enviada correctamente!",
+                    text: "Gracias por comunicarte con nosotros",
+                    icon: "success",
+                    confirmButtonColor: "#181717",
+                    confirmButtonText: "Aceptar",
+                });
 
+                document.getElementById("formContacto").reset();
+                document.getElementById("nombre");
+                nombre.className = "form-control";
+                document.getElementById("email");
+                email.className = "form-control";
+                document.getElementById("consulta");
+                consulta.className = "form-control";
+            },
+            function(error) {
+                console.log(error);
+                alert("No se pudo enviar el mail");
+            }
+        );
+}
+
+// VALIDACION LOGIN
+
+function validarUsuarios(usuario) {
+    if (usuario.value === user && usuario.value === pass) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validarGeneralLogin(event) {
+    event.preventDefault();
+    if (
+        validarUsuarios(document.getElementById("usuarios")) &&
+        validarUsuarios(document.getElementById("userPass"))
+    ) {
+        console.log("usuario y contraseña validados");
+        document.getElementById("formLogin").reset();
+        modalDeLogin.hide();
+        document.getElementById('navbarAdmin');
+        navbarAdmin.className = "nav-link"
+    } else {
+        document.getElementById("formLogin").reset();
+        alert("usuario y contraseña incorrectos");
+    }
+}
+// VALIDACION ADMIN
+function validarCodigo(codigo) {
+    if (codigo.value.trim() != '' && !isNaN(codigo.value)) {
+        codigo.className = 'form-control is-valid'
+        return true;
+    } else {
+        codigo.className = 'form-control is-invalid'
+        return false;
+
+    }
+}
+
+function validarNombre(input) {
+    if (input.value === '') {
+        input.className = 'form-control is-invalid'
+        return false;
+    } else {
+        input.className = 'form-control is-valid'
+        return true;
+    }
+}
+
+function validarSerie(numSerie) {
+    if (
+        numSerie.value.trim() != "" &&
+        !isNaN(numSerie.value)
+    ) {
+        numSerie.className = "form-control is-valid";
+        return true;
+    } else {
+        numSerie.className = "form-control is-invalid";
+        return false;
+    }
+}
+
+function validarCategoria(categoria) {
+    if (categoria.value.trim() != '') {
+        categoria.className = 'form-control is valid'
+        return true;
+    } else {
+        categoria.className = 'form-control is-invalid';
+        return false;
+    }
+}
+
+function validarDescripcion(descripcion) {
+    if (descripcion.value.trim() != '' && descripcion.value.length > 10) {
+        descripcion.className = 'form-control is valid'
+        return true;
+    } else {
+        descripcion.className = 'form-control is-invalid';
+        return false;
+    }
+}
+
+function validarImagen(imagen) {
+    if (imagen.value === '') {
+        imagen.className = 'form-control is-invalid'
+        return false;
+    } else {
+        imagen.className = 'form-control is-valid'
+        return true;
+    }
 }

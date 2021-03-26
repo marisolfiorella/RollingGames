@@ -25,9 +25,14 @@ function dibujarDatosEnTabla(_listaJuego) {
         <td>${_listaJuego[i].descripcion}</td>
         <td>${_listaJuego[i].imagen}</td>
         <td>
+<<<<<<< HEAD
             <button class="btn btn-success"><i class="fas fa-edit" onclick="prepararJuego(this)" id=${_listaJuego[i].codigo}></i></button>
             <button class="btn btn-danger" onclick="eliminarJuego(this)" id="${_listaJuego[i].codigo}"><i class="fas fa-trash"></i></button>
             
+=======
+            <button class="btn btn-warning"><i class="fas fa-edit" onclick="prepararJuego(this)" id=${_listaJuego[i].codigo}></i></button>
+            <button class="btn btn-danger" onclick="eliminarJuego(this)" id="${_listaJuego[i].codigo}"><i class="fas fa-trash"></i></button>
+>>>>>>> 5cd5626a0999c651f707feb27dc80af4da6c70ad
         </td>
     </tr>`;
 
