@@ -20,9 +20,9 @@ function dibujarDatosEnTabla(_listaJuego) {
         filas = ` <tr>
         <td>${_listaJuego[i].codigo}</td>
         <td>${_listaJuego[i].nombre}</td>
-        <td>${_listaJuego[i].numSerie}</td>
         <td>${_listaJuego[i].categoria}</td>
         <td>${_listaJuego[i].descripcion}</td>
+        <td>${_listaJuego[i].publicado}</td>
         <td>${_listaJuego[i].imagen}</td>
         <td>
             <button class="btn btn-warning"><i class="fas fa-edit" onclick="prepararJuego(this)" id=${_listaJuego[i].codigo}></i></button>
@@ -50,18 +50,18 @@ function leerDatos() {
 function modificarJuegoExistente() {
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
-    let numSerie = document.getElementById('numSerie').value;
-    let categoria = document.getElementById('categoria').value;
-    let descripcion = document.getElementById('descripcion').value;
+    let numSerie = document.getElementById('categoria').value;
+    let categoria = document.getElementById('descripcion').value;
+    let descripcion = document.getElementById('publicado').value;
     let imagen = document.getElementById('imagen').value;
 
     //BUSCAR EL OBJETO Y MODIFICAR SUS DATOS
     for (let i in _listaJuego) {
         if (_listaJuego[i].codigo === codigo) {
             _listaJuego[i].nombre;
-            _listaJuego[i].numSerie;
             _listaJuego[i].categoria;
             _listaJuego[i].descripcion;
+            _listaJuego[i].publicado;
             _listaJuego[i].imagen;
         }
     }
