@@ -67,25 +67,24 @@
                             <th scope="col">Nombre de juego</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Descripción</th>
-                            <th scope="col" class="mr-3">Publicado</th>
+                            <th scope="col">Publicado</th>
                             <th scope="col">Opciones</th>
                         </tr>
-                        <tbody id='tablaRollingGames' class="text-light">
-                            <tr>
-                                <td>1</td>
-                                <td>Grand Theft Auto</td>
-                                <td>Juegos de supervivencia</td>
-                                <td>Descripción breve.</td>
-                                <td></td>
-                                <td>
-                                    <div class="row">
-                                        <button class="btn btn-light mb-2"><i class="fas fa-edit"></i></button>
-                                        <button class="btn btn-light mb-2"><i class="far fa-trash-alt"></i></button>
-                                        <button class="btn btn-light mb-2"><i class="far fa-star"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
+                    </thead>
+                    <tbody id='tablaRollingGames' class="text-light">
+                        <tr>
+                            <td>1</td>
+                            <td>Grand Theft Auto</td>
+                            <td>Juegos de supervivencia</td>
+                            <td>Descripción breve.</td>
+                            <td></td>
+                            <td>
+                                <button class="btn btn-success"><i class="fas fa-edit" onclick="prepararJuego(this)" id=${_listaJuego[i].codigo}></i></button>
+                                <button class="btn btn-danger" onclick="eliminarJuego(this)" id="${_listaJuego[i].codigo}"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-warning" onclick="juegoFavorito(this)" id="${_listaJuego[i].codigo}"><i class="far fa-star"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </section>
