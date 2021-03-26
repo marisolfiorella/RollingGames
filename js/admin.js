@@ -49,10 +49,31 @@ function leerDatos() {
 //MODIFICAR JUEGO
 function modificarJuegoExistente() {
     let codigo = document.getElementById('codigo').value;
-    let nombre = document.getElementById('codigo').value;
+    let nombre = document.getElementById('nombre').value;
     let numSerie = document.getElementById('numSerie').value;
     let categoria = document.getElementById('categoria').value;
     let descripcion = document.getElementById('descripcion').value;
+    let imagen = document.getElementById('imagen').value;
+
+    //BUSCAR EL OBJETO Y MODIFICAR SUS DATOS
+    for (let i in _listaJuego) {
+        if (_listaJuego[i].codigo === codigo) {
+            _listaJuego[i].nombre;
+            _listaJuego[i].numSerie;
+            _listaJuego[i].categoria;
+            _listaJuego[i].descripcion;
+            _listaJuego[i].imagen;
+        }
+    }
+
+    //ACTUALIZO DATOS EN LOCALSTORAGE
+    localStorage.setItem(listaJuegoKey, JSON.stringify(listaJuego));
+
+    //MODAL DE CONFIRMACION DE QUE EL JUEGO FUE MODIFICADO
+    Swal.fire("Juego modificado.", "El juego seleccionado fué modificado.", "success")
+
+    leerDatos();
+    modalProducto.hide();
 }
 
 // let btnAgregar = document.getElementById('btnAgregar');
