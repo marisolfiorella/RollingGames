@@ -72,18 +72,8 @@
                         </tr>
                     </thead>
                     <tbody id='tablaRollingGames' class="text-light">
-                        <tr>
-                            <td>1</td>
-                            <td>Grand Theft Auto</td>
-                            <td>Juegos de supervivencia</td>
-                            <td>Descripción breve.</td>
-                            <td></td>
-                            <td>
-                                <button class="btn btn-success"><i class="fas fa-edit" onclick="prepararJuego(this)" id=${_listaJuego[i].codigo}></i></button>
-                                <button class="btn btn-danger" onclick="eliminarJuego(this)" id="${_listaJuego[i].codigo}"><i class="fas fa-trash"></i></button>
-                                <button class="btn btn-warning" onclick="juegoFavorito(this)" id="${_listaJuego[i].codigo}"><i class="far fa-star"></i></button>
-                            </td>
-                        </tr>
+
+
                     </tbody>
                 </table>
             </div>
@@ -113,10 +103,11 @@
     </footer>
     <!-- Modal ADMIN-->
     <div class="modal fade" id="modalJuego" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-dark text-light">
-                    <h5 class="modal-title" id="exampleModalLabel">Agregar videojuego</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Juego</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body bg-light">
@@ -148,16 +139,19 @@
                             <div class="valid-feedback"></div>
                             <div class="invalid-feedback">Debe ingresar una descripción.</div>
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Publicado</label>
-                            <input type="text" class="form-control" id="publicado" onblur="validarDescripcion(this)">
-                            <div class="valid-feedback"></div>
-                            <div class="invalid-feedback"></div>
-                        </div>
+
                         <div class="mb-3">
                             <label class="form-label">Imagen</label>
                             <input type="text" class="form-control" id="imagen" placeholder="Ingrese el nombre de la imagen." onblur="validarImagen(this)">
 
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" type="checkbox" id="publicado" onblur="validarPublicado(this)">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Publicado</label>
+                            </div>
+                            <div class="valid-feedback">Publicado</div>
+                            <div class="invalid-feedback">No publicado</div>
                         </div>
                         <button type="submit" class="btn btn-secondary mt-3 mx-auto d-block">Guardar</button>
                     </form>

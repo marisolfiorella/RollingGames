@@ -280,19 +280,6 @@ function validarNombre(input) {
     }
 }
 
-function validarSerie(numSerie) {
-    if (
-        numSerie.value.trim() != "" &&
-        !isNaN(numSerie.value)
-    ) {
-        numSerie.className = "form-control is-valid";
-        return true;
-    } else {
-        numSerie.className = "form-control is-invalid";
-        return false;
-    }
-}
-
 function validarCategoria(categoria) {
     if (categoria.value.trim() != '') {
         categoria.className = 'form-control is valid'
@@ -321,4 +308,18 @@ function validarImagen(imagen) {
         imagen.className = 'form-control is-valid'
         return true;
     }
+}
+
+function validarPublicado(publicado) {
+
+}
+
+function validarGeneral() {
+    if (validarFormulario(document.getElementById('codigo')) ==
+        validarFormulario(document.getElementById('nombre')) ==
+        validarFormulario(document.getElementById('categoria')) ==
+        validarDescripcion(document.getElementById('descripcion')) ==
+        validarFormulario(document.getElementById('imagen')) ==
+        validarFormulario(document.getElementById('publicado')) == true);
+    console.log('validacion correcta')
 }
