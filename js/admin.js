@@ -46,6 +46,15 @@ function leerDatos() {
     }
 }
 
+//MODIFICAR JUEGO
+function modificarJuegoExistente() {
+    let codigo = document.getElementById('codigo').value;
+    let nombre = document.getElementById('codigo').value;
+    let numSerie = document.getElementById('numSerie').value;
+    let categoria = document.getElementById('categoria').value;
+    let descripcion = document.getElementById('descripcion').value;
+}
+
 // let btnAgregar = document.getElementById('btnAgregar');
 // btnAgregar.addEventListener('click', function() {
 //     limpiarFormulario();
