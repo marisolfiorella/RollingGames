@@ -18,7 +18,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light" id="navigation-bar">
             <section class="container">
                 <div class="container-fluid d-flex align-items-center">
-                    <a class="navbar-brand" href="index.html"><img src="img/logoblanco.jpeg" alt="Logo de la pagina RollingGames" id="iconoheader"></a>
+                    <a class="navbar-brand" href="index.html"><img src="img/LogoRollingGames.png" alt="Logo de la pagina RollingGames" id="iconoheader"></a>
                     <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                     </button>
@@ -65,7 +65,7 @@
                             <th scope="col">Nombre de juego</th>
                             <th scope="col">Categoría</th>
                             <th scope="col">Descripción</th>
-                            <th scope="col" class="mr-3">Publicado</th>
+                            <th scope="col">Publicado</th>
                             <th scope="col">Opciones</th>
                         </tr>
                     </thead>
@@ -77,11 +77,9 @@
                             <td>Descripción breve.</td>
                             <td></td>
                             <td>
-                                <div class="row">
-                                    <button class="btn btn-light mb-2"><i class="fas fa-edit"></i></button>
-                                    <button class="btn btn-light mb-2"><i class="far fa-trash-alt"></i></button>
-                                    <button class="btn btn-light mb-2"><i class="far fa-star"></i></button>
-                                </div>
+                                <button class="btn btn-success"><i class="fas fa-edit" onclick="prepararJuego(this)" id=${_listaJuego[i].codigo}></i></button>
+                                <button class="btn btn-danger" onclick="eliminarJuego(this)" id="${_listaJuego[i].codigo}"><i class="fas fa-trash"></i></button>
+                                <button class="btn btn-warning" onclick="juegoFavorito(this)" id="${_listaJuego[i].codigo}"><i class="far fa-star"></i></button>
                             </td>
                         </tr>
                     </tbody>
