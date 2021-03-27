@@ -43,11 +43,6 @@ leerDatos();
 
 function agregarJuego() {
 
-    //if(validarGeneral)){
-    //aque agrego el apartado 1 de abajo
-    //}else{
-    //}
-    //PARTE 1
     let codigo = document.getElementById('codigo').value;
     let nombre = document.getElementById('nombre').value;
     let categoria = document.getElementById('categoria').value;
