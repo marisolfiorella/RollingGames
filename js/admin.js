@@ -1,5 +1,4 @@
 import { Juego } from './juegoClass';
-//import { validarCodigo, validarNombre, validarCategoria, validarDescripcion, validarImagen, validarGeneral }
 
 const modalProducto = new bootstrap.Modal(document.getElementById('modalJuego'))
 let listaJuego = []
@@ -46,6 +45,33 @@ function leerDatos() {
         dibujarDatosEnTabla(_listaJuego)
     }
 }
+
+function validarGeneral(event) {
+    event.preventDefault();
+    if (
+      validarCodigo(document.getElementById("codigo")) &&
+      validarNombre(document.getElementById("nombre")) &&
+      validarCategoria(document.getElementById("categoria")) &&
+      validarDescripcion(document.getElementById("descripcion")) &&
+      validarImagen(document.getElementById("imagen"))
+    ) {
+      verificarEstado();
+      console.log("campos de admin validados");
+      console.log(estadoPublicado);
+    }
+  }
+  
+  //funcion para guardar estado de publicacion de juego en variable
+  var estadoPublicado = false;
+  function verificarEstado() {
+    let checkPublicado = document.getElementById("publicado");
+    checkPublicado.addEventListener("change", function () {});
+    if (checkPublicado.checked) {
+      estadoPublicado = true;
+    } else {
+      estadoPublicado = false;
+    }
+  } 
 
 //MODIFICAR JUEGO
 // function modificarJuegoExistente() {
@@ -182,3 +208,5 @@ function leerDatos() {
 //     leerDatos();
 //     modalProducto.hide();
 // }
+
+
