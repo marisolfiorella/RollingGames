@@ -46,6 +46,7 @@ function leerDatos() {
     }
 }
 
+
 //MODIFICAR JUEGO
 // function modificarJuegoExistente() {
 //     let codigo = document.getElementById('codigo').value;
@@ -183,18 +184,3 @@ function leerDatos() {
 // }
 
 
-function validarGeneral(event) {
-    event.preventDefault();
-    if (
-      validarCodigo(document.getElementById("codigo")) &&
-      validarNombre(document.getElementById("nombre")) &&
-      validarCategoria(document.getElementById("categoria")) &&
-      validarDescripcion(document.getElementById("descripcion")) &&
-      validarImagen(document.getElementById("imagen"))
-    ) {
-      console.log("campos de admin validados");
-      console.log(estadoPublicado);
-      
-     
-    }
-  }
