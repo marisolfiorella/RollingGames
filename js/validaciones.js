@@ -280,7 +280,7 @@ function validarNombre(input) {
 }
 
 function validarCategoria(categoria) {
-  if (categoria.value.trim() != "") {
+  if (categoria.value ==  "accion" || categoria.value == "aventura" || categoria.value == "shooter" || categoria.value == "multijugador" && categoria.value.trim() !== "") {
     categoria.className = "form-control is-valid";
     return true;
   } else {
@@ -309,15 +309,9 @@ function validarImagen(imagen) {
   }
 }
 
-let checkPublicado = document.getElementById("publicado");
-var estadoPublicado = false
-checkPublicado.addEventListener("change", function () {
- estadoPublicado = checkPublicado.checked
-});
-
 function validarGeneral(event) {
     event.preventDefault();
-    if (
+        if (
       validarCodigo(document.getElementById("codigo")) &&
       validarNombre(document.getElementById("nombre")) &&
       validarCategoria(document.getElementById("categoria")) &&
@@ -330,4 +324,12 @@ function validarGeneral(event) {
      
     }
   }
+  
+  let checkPublicado = document.getElementById("publicado");
+var estadoPublicado = false;
+checkPublicado.addEventListener("change", function () {
+ estadoPublicado = checkPublicado.checked
+});
+
+
 
