@@ -1,5 +1,5 @@
 import { Juego } from './juegoClass';
-//import { validarCodigo, validarNombre, validarCategoria, validarDescripcion, validarImagen, validarAdmin }
+//import { validarCodigo, validarNombre, validarCategoria, validarDescripcion, validarImagen, validarGeneral }
 
 const modalProducto = new bootstrap.Modal(document.getElementById('modalJuego'))
 let listaJuego = []
@@ -20,14 +20,15 @@ function dibujarDatosEnTabla(_listaJuego) {
         filas = ` <tr>
         <td>${_listaJuego[i].codigo}</td>
         <td>${_listaJuego[i].nombre}</td>
-        <td>${_listaJuego[i].numSerie}</td>
         <td>${_listaJuego[i].categoria}</td>
-        <td>${_listaJuego[i].descripcion}</td>
+        <td>${_listaJuego[i].descripcion}</td>        
         <td>${_listaJuego[i].imagen}</td>
+        <td>${_listaJuego[i].publicado}</td>
         <td>
-            <button class="btn btn-warning"><i class="fas fa-edit" onclick="prepararJuego(this)" id=${_listaJuego[i].codigo}></i></button>
+            <button class="btn btn-succes"><i class="fas fa-edit" onclick="prepararJuego(this)" id=${_listaJuego[i].codigo}></i></button>
             <button class="btn btn-danger" onclick="eliminarJuego(this)" id="${_listaJuego[i].codigo}"><i class="fas fa-trash"></i></button>
-        </td>
+            <button class="btn btn-warning" onclick="juegoFavorito(this)" id="${_listaJuego[i].codigo}"><i class="far fa-star"></i></button>
+            </td>
     </tr>`;
 
         tabla.innerHTML += filas;
@@ -46,6 +47,36 @@ function leerDatos() {
     }
 }
 
+//MODIFICAR JUEGO
+// function modificarJuegoExistente() {
+//     let codigo = document.getElementById('codigo').value;
+//     let nombre = document.getElementById('nombre').value;
+//     let numSerie = document.getElementById('categoria').value;
+//     let categoria = document.getElementById('descripcion').value;
+//     let descripcion = document.getElementById('publicado').value;
+//     let imagen = document.getElementById('imagen').value;
+
+//     //BUSCAR EL OBJETO Y MODIFICAR SUS DATOS
+//     for (let i in _listaJuego) {
+//         if (_listaJuego[i].codigo === codigo) {
+//             _listaJuego[i].nombre;
+//             _listaJuego[i].categoria;
+//             _listaJuego[i].descripcion;
+//             _listaJuego[i].publicado;
+//             _listaJuego[i].imagen;
+//         }
+//     }
+
+//     //ACTUALIZO DATOS EN LOCALSTORAGE
+//     localStorage.setItem(listaJuegoKey, JSON.stringify(listaJuego));
+
+//     //MODAL DE CONFIRMACION DE QUE EL JUEGO FUE MODIFICADO
+//     Swal.fire("Juego modificado.", "El juego seleccionado fué modificado.", "success")
+
+//     leerDatos();
+//     modalProducto.hide();
+// }
+
 // let btnAgregar = document.getElementById('btnAgregar');
 // btnAgregar.addEventListener('click', function() {
 //     limpiarFormulario();
@@ -54,6 +85,7 @@ function leerDatos() {
 // leerDatos();
 
 // function agregarJuego() {
+
 //     let codigo = document.getElementById('codigo').value;
 //     let nombre = document.getElementById('nombre').value;
 //     let numSerie = document.getElementById('numSerie').value;
