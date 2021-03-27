@@ -1,5 +1,4 @@
 import { Juego } from './juegoClass';
-//import { validarCodigo, validarNombre, validarCategoria, validarDescripcion, validarImagen, validarGeneral }
 
 const modalProducto = new bootstrap.Modal(document.getElementById('modalJuego'))
 let listaJuego = []
@@ -182,3 +181,20 @@ function leerDatos() {
 //     leerDatos();
 //     modalProducto.hide();
 // }
+
+
+function validarGeneral(event) {
+    event.preventDefault();
+    if (
+      validarCodigo(document.getElementById("codigo")) &&
+      validarNombre(document.getElementById("nombre")) &&
+      validarCategoria(document.getElementById("categoria")) &&
+      validarDescripcion(document.getElementById("descripcion")) &&
+      validarImagen(document.getElementById("imagen"))
+    ) {
+      console.log("campos de admin validados");
+      console.log(estadoPublicado);
+      
+     
+    }
+  }
