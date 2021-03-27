@@ -280,7 +280,12 @@ function validarNombre(input) {
 }
 
 function validarCategoria(categoria) {
-  if (categoria.value ==  "accion" || categoria.value == "aventura" || categoria.value == "shooter" || categoria.value == "multijugador" && categoria.value.trim() !== "") {
+  if (
+    categoria.value == "accion" ||
+    categoria.value == "aventura" ||
+    categoria.value == "shooter" ||
+    (categoria.value == "multijugador" && categoria.value.trim() !== "")
+  ) {
     categoria.className = "form-control is-valid";
     return true;
   } else {
@@ -308,28 +313,5 @@ function validarImagen(imagen) {
     return true;
   }
 }
-
-function validarGeneral(event) {
-    event.preventDefault();
-        if (
-      validarCodigo(document.getElementById("codigo")) &&
-      validarNombre(document.getElementById("nombre")) &&
-      validarCategoria(document.getElementById("categoria")) &&
-      validarDescripcion(document.getElementById("descripcion")) &&
-      validarImagen(document.getElementById("imagen"))
-    ) {
-      console.log("campos de admin validados");
-      console.log(estadoPublicado);
-      
-     
-    }
-  }
-  
-  let checkPublicado = document.getElementById("publicado");
-var estadoPublicado = false;
-checkPublicado.addEventListener("change", function () {
- estadoPublicado = checkPublicado.checked
-});
-
 
 
