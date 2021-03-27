@@ -31,15 +31,18 @@ function verificarEstado() {
 let listaJuego = []
     //ESTO ES PARA ABRIR LA VENTANA MODAL
 const modalProducto = new bootstrap.Modal(document.getElementById('modalJuego'))
+    // cuando modificarJuego = true, estoy modificando un producto
+let modificarJuego = false;
 let btnAgregar = document.getElementById('btnAgregar');
 btnAgregar.addEventListener('click', function() {
+    limpiarFormulario();
     modalProducto.show();
 })
 leerDatos();
 
 
-window.agregarJuego = function(event) {
-    event.preventDefault();
+function agregarJuego() {
+
     //if(validarGeneral)){
     //aque agrego el apartado 1 de abajo
     //}else{
@@ -67,6 +70,7 @@ window.agregarJuego = function(event) {
 
 function limpiarFormulario() {
     document.getElementById('formJuego').reset();
+    modificarJuego = false;
 }
 
 function leerDatos() {
@@ -97,7 +101,7 @@ function dibujarDatosEnTabla(_listaJuego) {
           </label>
           </div>
       </td>
-      <td> <button class="btn btn-success" onclick=editarJuego(this)><i class="fas fa-edit"></i></button>
+      <td> <button class="btn btn-success" onclick="prepararJuego(this)" id="${_listaJuego[i].codigo}"><i class="fas fa-edit"></i></button>
           <button class="btn btn-danger" onclick="eliminarJuego(this)" id="${_listaJuego[i].codigo}"><i class="fas fa-trash"></i></button>
           <button class="btn btn-warning onclick="juegoFavorito(this)"><i class="far fa-star"></i></button></td>
   </tr>`;
@@ -129,4 +133,48 @@ window.eliminarJuego = function(boton) {
             )
         }
     })
+}
+window.prepararJuego = function(boton) {
+    let juegoEncontrado = listaJuego.find((producto) => { return producto.codigo === boton.id })
+
+    document.getElementById('codigo').value = juegoEncontrado.codigo;
+    document.getElementById('nombre').value = juegoEncontrado.nombre;
+    document.getElementById('categoria').value = juegoEncontrado.categoria;
+    document.getElementById('descripcion').value = juegoEncontrado.descripcion;
+    document.getElementById('imagen').value = juegoEncontrado.imagen;
+    document.getElementById('publicado').value = juegoEncontrado.publicado;
+    modificarJuego = true;
+    modalProducto.show();
+
+}
+window.guardarJuego = function(event) {
+    event.preventDefault();
+    if (modificarJuego === true) {
+        modificarJuegoExistente();
+    } else {
+        agregarJuego();
+    }
+}
+
+function modificarJuegoExistente() {
+    let codigo = document.getElementById('codigo').value;
+    let nombre = document.getElementById('nombre').value;
+    let categoria = document.getElementById('categoria').value;
+    let descripcion = document.getElementById('descripcion').value;
+    let imagen = document.getElementById('imagen').value;
+    let publicado = document.getElementById('publicado').value;
+
+    for (let i in listaJuego) {
+        if (listaJuego[i].codigo === codigo) {
+            listaJuego[i].nombre = nombre;
+            listaJuego[i].categoria = categoria;
+            listaJuego[i].descripcion = descripcion;
+            listaJuego[i].imagen = imagen;
+            listaJuego[i].publicado = publicado;
+        }
+    }
+    localStorage.setItem('listaJuegoKey', JSON.stringify(listaJuego));
+    Swal.fire("Juego modificado", " El juego seleccionado fue modificado exitosamente", "success");
+    leerDatos();
+    modalProducto.hide();
 }

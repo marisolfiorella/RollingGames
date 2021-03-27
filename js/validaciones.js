@@ -303,13 +303,3 @@ function validarDescripcion(descripcion) {
         return false;
     }
 }
-
-function validarImagen(imagen) {
-    if (imagen.value === "") {
-        imagen.className = "form-control is-invalid";
-        return false;
-    } else {
-        imagen.className = "form-control is-valid";
-        return true;
-    }
-}

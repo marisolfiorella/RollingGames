@@ -112,7 +112,7 @@
                 </div>
                 <div class="modal-body bg-light">
                     <!-- Formulario -->
-                    <form id="formJuego" onsubmit="agregarJuego(event)">
+                    <form id="formJuego" onsubmit="guardarJuego(event)">
                         <div class="mb-3">
                             <label class="form-label">Código</label>
                             <input type="text" class="form-control" id="codigo" placeholder="Ingrese el código del juego." onblur="validarCodigo(this)">
@@ -142,7 +142,7 @@
 
                         <div class="mb-3">
                             <label class="form-label">Imagen</label>
-                            <input type="text" class="form-control" id="imagen" placeholder="Ingrese el nombre de la imagen." onblur="validarImagen(this)">
+                            <input type="text" class="form-control" id="imagen" placeholder="Ingrese el nombre de la imagen.">
 
                         </div>
                         <div class="mb-3">
