@@ -305,13 +305,38 @@ function validarDescripcion(descripcion) {
 }
 
 function validarImagen(imagen) {
-  if (imagen.value === "") {
-    imagen.className = "form-control is-invalid";
-    return false;
-  } else {
+  if (imagen.value.trim() != "" || imagen.value.lenght < 200) {
     imagen.className = "form-control is-valid";
     return true;
+  } else {
+    imagen.className = "form-control is-invalid";
+    return false;
   }
 }
 
+/* function estadoPublicado(valor) {
+  if (valor.value === "si" || valor.value === "no"){
+    console.log (valor.value)
+    return true
+} else {
+  console.log(valor.value)
+  valor.className = "form-select is-invalid"
+  return false
+}
+}
+ */
 
+function cambioPublicado(check){
+  var estado = check.value
+      document.getElementById('valorPublicado').value = estado
+  if (valorPublicado.value === "si" || valorPublicado.value === "no"){
+         return true
+    } else {
+check.className = "form-select is-invalid"
+return false;
+    }
+  
+  }
+
+      
+    
