@@ -11,7 +11,7 @@ const flechaIzquierda = document.getElementById('flecha-izquierda');
 const flechaDerecha = document.getElementById('flecha-derecha');
 
 
-// ? ----- ----- Event Listener para la flecha derecha. ----- -----
+// ----- ----- Event Listener para la flecha derecha ----- -----
 flechaDerecha.addEventListener('click', () => {
     fila.scrollLeft += fila.offsetWidth;
 
@@ -22,7 +22,7 @@ flechaDerecha.addEventListener('click', () => {
     }
 });
 
-// ? ----- ----- Event Listener para la flecha izquierda. ----- -----
+// ----- ----- Event Listener para la flecha izquierda ----- -----
 flechaIzquierda.addEventListener('click', () => {
     fila.scrollLeft -= fila.offsetWidth;
 
@@ -33,35 +33,6 @@ flechaIzquierda.addEventListener('click', () => {
     }
 });
 
-
-//function leerJuego() {
-//    if (localStorage.length > 0) {
-//        listaJuego = JSON.parse(localStorage.getItem('listaJuegoKey'));
-//        let filaCards = document.getElementById('filaCards');
-//        filaCards.innerHTML = '';
-//        for (let i in listaJuego) {
-//            let imagen = '';
-//            if (listaJuego[i].imagen === '') {
-//                imagen = 'imagenNoDisponible.png'
-//            } else {
-//                imagen = listaJuego[i].imagen;
-//            }
-//            if (listaJuego[i].publicado === 'si' &&&) {
-//                console.log(listaJuego[i].publicado);
-//                let columna = `<div class="col-md-3 col-sm-6 my-2">
-//            <div class="card w-100 bg-dark text-light">
-//                <img src="img/juegos/${imagen}" class="card-img-top" alt="${listaJuego[i].nombre}">
-//               <div class="card-body">
-//                    <h5 class="card-title">${listaJuego[i].nombre}</h5>
-//                    <p class="card-text">${listaJuego[i].descripcion}</p>
-//                    <a href="#" class="btn btn-info">Ver más</a>
-//                </div>
-//            </div>`
-//                filaCards.innerHTML += columna;
-//            }
-//        }
-//    }
-//}
 
 function leerJuegoAccion() {
     if (localStorage.length > 0) {
@@ -78,9 +49,11 @@ function leerJuegoAccion() {
             if (listaJuego[i].publicado === 'si' && listaJuego[i].categoria === 'accion') {
                 let columna = `<div class="juego mx-3">
                 <div class="juego mx-3">
-                    <a href="#"><img src="img/juegos/${imagen}" alt=""></a>
+                    <a href="detalleJuego.html" onclick="detalleJuegoMostrar(this)" id="${listaJuego[i].codigo}"><img src="img/juegos/${imagen}" alt=""></a>
             </div>`
                 filaSliderAccion.innerHTML += columna;
+
+
             }
         }
     }
@@ -101,7 +74,7 @@ function leerJuegoAventura() {
             if (listaJuego[i].publicado === 'si' && listaJuego[i].categoria === 'aventura') {
                 let columna = `<div class="juego mx-3">
                 <div class="juego mx-3">
-                    <a href="#"><img src="img/juegos/${imagen}" alt=""></a>
+                <a href="detalleJuego.html" onclick="detalleJuegoMostrar(this)" id="${listaJuego[i].codigo}"><img src="img/juegos/${imagen}" alt=""></a>
             </div>`
                 filaSliderAventura.innerHTML += columna;
             }
@@ -124,7 +97,7 @@ function leerJuegoMultijugador() {
             if (listaJuego[i].publicado === 'si' && listaJuego[i].categoria === 'multijugador') {
                 let columna = `<div class="juego mx-3">
                 <div class="juego mx-3">
-                    <a href="#"><img src="img/juegos/${imagen}" alt=""></a>
+                <a href="detalleJuego.html" onclick="detalleJuegoMostrar(this)" id="${listaJuego[i].codigo}"><img src="img/juegos/${imagen}" alt=""></a>
             </div>`
                 filaSliderMultijugador.innerHTML += columna;
             }
@@ -147,10 +120,15 @@ function leerJuegoShooter() {
             if (listaJuego[i].publicado === 'si' && listaJuego[i].categoria === 'shooter') {
                 let columna = `<div class="juego mx-3">
                 <div class="juego mx-3">
-                    <a href="#"><img src="img/juegos/${imagen}" alt=""></a>
+                <a href="detalleJuego.html" onclick="detalleJuegoMostrar(this)" id="${listaJuego[i].codigo}"><img src="img/juegos/${imagen}" alt=""></a>
             </div>`
                 filaSliderShooter.innerHTML += columna;
             }
         }
     }
+}
+
+window.detalleJuegoMostrar = function(boton) {
+    console.log(boton.id);
+    localStorage.setItem('id', boton.id);
 }
